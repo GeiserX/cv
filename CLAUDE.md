@@ -1,6 +1,6 @@
 # CLAUDE.md — geiserx.github.io
 
-Sergio's personal page and CV at https://geiserx.github.io/. Repo GeiserX/geiserx.github.io, GPL-3.0.
+Sergio's personal page and CV at https://cv.geiser.cloud/ (GitHub Pages, custom domain; geiserx.github.io redirects there). Repo GeiserX/geiserx.github.io, GPL-3.0.
 
 - `index.html` is the whole site: one file, inline CSS, system serif stack, no JavaScript, print stylesheet that produces the CV. Keep it that way; do not add a build, a framework or a web font.
 - Two blocks are generated and must not be hand-edited: between `<!-- posts:start -->`/`posts:end` (blog RSS) and `<!-- projects:start -->`/`projects:end` (GitHub API, top ten by stars). `scripts/update_content.py index.html` rewrites them; `--check` exits 1 when the page is behind. Hand-written one-liners inside the projects block are kept by the script; a repo new to the list gets GitHub's first sentence.

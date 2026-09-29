@@ -4,7 +4,7 @@
 
 <h1 align="center">geiserx.github.io</h1>
 
-<p align="center">Sergio Fernández's page and CV: <a href="https://geiserx.github.io/">geiserx.github.io</a></p>
+<p align="center">Sergio Fernández's page and CV: <a href="https://cv.geiser.cloud/">cv.geiser.cloud</a></p>
 
 ---
 
