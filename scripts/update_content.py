@@ -90,10 +90,16 @@ def projects_block(n, keep):
     return "\n".join(lines)
 
 
+def plain(text):
+    """No emoji, no em or en dashes, straight quotes: the page's own rules apply to fetched text too."""
+    text = re.sub(r"[\U0001F300-\U0001FAFF☀-➿]", "", text)
+    text = text.replace("—", ",").replace("–", ",").replace(" - ", ", ")
+    return text.replace("“", '"').replace("”", '"').replace("‘", "'").replace("’", "'").strip()
+
+
 def one_line(desc):
-    """GitHub descriptions can be long marketing lines; keep the first sentence, drop emoji and dashes."""
-    desc = re.sub(r"[\U0001F300-\U0001FAFF☀-➿]", "", desc)
-    desc = desc.replace("—", ",").replace("–", ",").replace(" - ", ", ")
+    """GitHub descriptions can be long marketing lines; keep the first sentence."""
+    desc = plain(desc)
     first = re.split(r"(?<=[.!?])\s+", desc.strip(), maxsplit=1)[0]
     if len(first) > 140:
         first = first[:137].rsplit(" ", 1)[0] + "..."
