@@ -1,0 +1,53 @@
+# Builds and deploys the site. The CV PDF is printed from index.html itself on every deploy, so the page and
+# the PDF can never drift apart. The PDF is not committed; it only exists in the deployed site.
+name: pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest   # public repo: GitHub-hosted runners are free
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Assemble the site
+        run: |
+          mkdir -p _site
+          cp index.html favicon.ico _site/
+          cp -r docs _site/docs
+
+      - name: Print the CV from the page itself
+        run: |
+          sudo apt-get install -y --no-install-recommends poppler-utils fonts-crosextra-caladea
+          google-chrome --headless=new --no-sandbox --disable-gpu --no-pdf-header-footer \
+            --print-to-pdf="$PWD/_site/sergio-fernandez-cv.pdf" "file://$PWD/_site/index.html"
+          pages=$(pdfinfo _site/sergio-fernandez-cv.pdf | awk '/^Pages:/{print $2}')
+          echo "CV pages: $pages"
+          # The page is designed to print on two A4 pages; three is tolerated for font differences, more fails the deploy.
+          test "$pages" -le 3
+
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
