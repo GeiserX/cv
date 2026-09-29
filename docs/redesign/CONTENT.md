@@ -5,7 +5,7 @@ This is the single source of facts for the mockups. Everything here was checked 
 ## Who
 
 - Sergio Fernández, GeiserX on GitHub. Murcia, Spain. English and Spanish.
-- One-line, his words: "I build AI agent tooling and open-source desktop apps, run a homelab, and spent over ten years before that in DevOps, Kubernetes and networks."
+- One-line, his words: "I build AI agent tooling and open-source desktop apps, run a homelab, and spent over twelve years before that in DevOps, Kubernetes and networks."
 - Tagline he already uses on GitHub: "Building things nobody asked for, one repo at a time."
 - Mantra he already uses on the CV: "Strong opinions, loosely held."
 - Contact: sergio@geiser.cloud (public mailto on the blog). Links: https://geiser.cloud (blog), https://github.com/GeiserX (about 200 public repos), https://www.linkedin.com/in/sergiofdz/, https://mastodon.social/@geiser, https://hub.docker.com/u/drumsergio, https://t.me/geiserdrums. Do not put the phone number on the site (it is in the PDF only).
