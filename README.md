@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="docs/images/banner.svg" alt="geiserx.github.io banner" width="900">
+  <img src="docs/images/banner.svg" alt="banner" width="900">
 </p>
 
-<h1 align="center">geiserx.github.io</h1>
+<h1 align="center">cv.geiser.cloud</h1>
 
 <p align="center">Sergio Fernández's page and CV: <a href="https://cv.geiser.cloud/">cv.geiser.cloud</a></p>
 
