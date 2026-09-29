@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About: companies, dark tiles</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Approximation of Ghost Alto in forced dark mode. Not the site CSS. */
+* { box-sizing: border-box; }
+html, body { margin: 0; background: #15171a; color: #e8e8e8; font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; }
+.fr-head { max-width: 1200px; margin: 0 auto; padding: 28px 24px; display: flex; justify-content: space-between; align-items: center; font-weight: 700; font-size: 20px; }
+.fr-head nav { font-weight: 500; font-size: 14px; color: #a6abb3; display: flex; gap: 22px; }
+.fr-head nav b { color: #FF1A75; font-weight: 500; }
+.gh-content { max-width: 720px; margin: 40px auto 120px; padding: 0 24px; font-size: 17px; line-height: 1.7; }
+.gh-content h1 { font-size: 42px; line-height: 1.15; margin: 0 0 32px; letter-spacing: -.02em; }
+.gh-content h2 { font-size: 26px; margin: 56px 0 8px; letter-spacing: -.01em; }
+.gh-content p { margin: 0 0 20px; color: #c9ccd1; }
+.gh-content a { color: #FF1A75; }
+@media (max-width: 480px) { .gh-content { padding: 0 18px; font-size: 16px; } .gh-content h1 { font-size: 32px; } .fr-head nav { display: none; } }
+</style>
+</head>
+<body>
+<header class="fr-head"><span>Sergio Fernández</span><nav><span>Home</span><b>About</b><span>Portfolio</span><span>CV</span></nav></header>
+<main class="gh-content">
+<h1>About</h1>
+<p>My CV, with the PDF, is at <a href="https://cv.geiser.cloud">cv.geiser.cloud</a>.</p>
+<h2>Companies I've worked with</h2>
+<p>Employers and clients over the last twelve years.</p>
+<!-- ghost-content-start -->
+<!--kg-card-begin: html-->
+<style>
+.co-tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(112px, 1fr));
+    gap: 12px;
+    margin: 1.5em 0 0;
+}
+.co-tile {
+    aspect-ratio: 1;
+    background: #1d2024;
+    border: 1px solid rgba(255, 255, 255, .07);
+    border-radius: 10px;
+    padding: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: border-color .25s ease, background-color .25s ease;
+}
+.co-tile:hover { border-color: rgba(255, 255, 255, .2); background: #212429; }
+.co-tile .co-img { max-width: 100%; max-height: 58%; object-fit: contain; transform: scale(var(--z, 1)); }
+.co-img {
+    display: block;
+    margin: 0;
+    filter: brightness(0) invert(.92);
+    opacity: .7;
+    transition: filter .25s ease, opacity .25s ease;
+}
+.co-img.co-detail { filter: grayscale(1) invert(.92) contrast(1.4); }
+.co-img.co-paper { filter: grayscale(1) invert(1) contrast(1.4); mix-blend-mode: screen; }
+.co-img.co-plate { filter: grayscale(1) contrast(1.8); mix-blend-mode: screen; }
+.co-tile:hover .co-img { filter: none; opacity: 1; }
+.co-tile:hover .co-img.co-lift { filter: invert(1) hue-rotate(180deg); }
+.co-tile:hover .co-img.co-still { filter: grayscale(1) contrast(1.8); }
+@media (max-width: 480px) {
+    .co-tiles { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .co-tile { padding: 12%; border-radius: 8px; }
+}
+</style>
+<div class="co-tiles">
+    <div class="co-tile"><img class="co-img" src="https://geiser.cloud/content/images/work/ACSdesk.png" alt="ACSdesk" loading="lazy"></div>
+    <div class="co-tile" style="--z:1.45"><img class="co-img co-lift" src="https://geiser.cloud/content/images/work/Aeroground.png" alt="Aeroground" loading="lazy"></div>
+    <div class="co-tile"><img class="co-img co-lift" src="https://geiser.cloud/content/images/work/AeroMexico.png" alt="AeroMexico" loading="lazy"></div>
+    <div class="co-tile"><img class="co-img co-lift" src="https://geiser.cloud/content/images/work/Airline%20Assistance%20Switzerland.png" alt="Airline Assistance Switzerland" loading="lazy"></div>
+    <div class="co-tile"><img class="co-img co-lift" src="https://geiser.cloud/content/images/work/British%20Airways.png" alt="British Airways" loading="lazy"></div>
+    <div class="co-tile"><img class="co-img co-paper co-lift" src="https://geiser.cloud/content/images/work/Casacom.png" alt="Casacom" loading="lazy"></div>
+    <div class="co-tile"><img class="co-img" src="https://geiser.cloud/content/images/work/Claranet.svg" alt="Claranet" loading="lazy"></div>
+    <div class="co-tile"><img class="co-img" src="https://geiser.cloud/content/images/work/Etihad.png" alt="Etihad" loading="lazy"></div>
+    <div class="co-tile"><img class="co-img co-detail co-lift" src="https://geiser.cloud/content/images/work/Hochbahn%20Hamburg.png" alt="Hochbahn Hamburg" loading="lazy"></div>
+    <div class="co-tile"><img class="co-img co-paper co-lift" src="https://geiser.cloud/content/images/work/Innoxess.png" alt="Innoxess" loading="lazy"></div>
+    <div class="co-tile"><img class="co-img co-lift" src="https://geiser.cloud/content/images/work/Inform.png" alt="Inform" loading="lazy"></div>
+    <div class="co-tile"><img class="co-img" src="https://geiser.cloud/content/images/work/KLM.png" alt="KLM" loading="lazy"></div>
+    <div class="co-tile"><img class="co-img co-lift" src="https://geiser.cloud/content/images/work/Kobil.png" alt="Kobil" loading="lazy"></div>
+    <div class="co-tile"><img class="co-img co-lift" src="https://geiser.cloud/content/images/work/Levante%20Networks.png" alt="Levante Networks" loading="lazy"></div>
+    <div class="co-tile"><img class="co-img co-detail co-lift" src="https://geiser.cloud/content/images/work/LSG%20Sky%20Chefs.svg" alt="LSG Sky Chefs" loading="lazy"></div>
+    <div class="co-tile" style="--z:1.2"><img class="co-img co-lift" src="https://geiser.cloud/content/images/work/Mercedes-Benz.webp" alt="Mercedes-Benz" loading="lazy"></div>
+    <div class="co-tile" style="--z:1.3"><img class="co-img co-lift" src="https://geiser.cloud/content/images/work/Netpresenter.png" alt="Netpresenter" loading="lazy"></div>
+    <div class="co-tile" style="--z:1.5"><img class="co-img co-plate" src="https://geiser.cloud/content/images/2026/09/neutralbase.png" alt="Neutral Base" loading="lazy"></div>
+    <div class="co-tile"><img class="co-img co-lift" src="https://geiser.cloud/content/images/work/Panasonic.png" alt="Panasonic" loading="lazy"></div>
+    <div class="co-tile"><img class="co-img" src="https://geiser.cloud/content/images/work/Safety%2014.png" alt="Safety 14" loading="lazy"></div>
+    <div class="co-tile"><img class="co-img co-lift" src="https://geiser.cloud/content/images/work/Starlux%20Airlines.png" alt="Starlux Airlines" loading="lazy"></div>
+    <div class="co-tile"><img class="co-img" src="https://geiser.cloud/content/images/work/Streamnow.svg" alt="Streamnow" loading="lazy"></div>
+    <div class="co-tile"><img class="co-img co-lift" src="https://geiser.cloud/content/images/work/Swissport.png" alt="Swissport" loading="lazy"></div>
+    <div class="co-tile"><img class="co-img co-lift" src="https://geiser.cloud/content/images/work/TrustYou.png" alt="TrustYou" loading="lazy"></div>
+    <div class="co-tile"><img class="co-img" src="https://geiser.cloud/content/images/work/Twitch.svg" alt="Twitch" loading="lazy"></div>
+    <div class="co-tile" style="--z:1.3"><img class="co-img co-lift" src="https://geiser.cloud/content/images/work/Userwerk.png" alt="Userwerk" loading="lazy"></div>
+    <div class="co-tile" style="--z:1.1"><img class="co-img co-plate" src="https://geiser.cloud/content/images/work/Walt%20Disney.jpg" alt="Walt Disney" loading="lazy"></div>
+    <div class="co-tile" style="--z:2.1"><img class="co-img co-plate co-still" src="https://geiser.cloud/content/images/work/Xebia.jpg" alt="Xebia" loading="lazy"></div>
+    <div class="co-tile"><img class="co-img co-lift" src="https://geiser.cloud/content/images/work/Zeit%20Online.png" alt="Zeit Online" loading="lazy"></div>
+</div>
+<!--kg-card-end: html-->
+<!-- ghost-content-end -->
+</main>
+</body>
+</html>
