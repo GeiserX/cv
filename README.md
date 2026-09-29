@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/images/banner.svg" alt="banner" width="900">
+  <img src="docs/images/banner.svg" alt="cv.geiser.cloud" width="900">
 </p>
 
 <h1 align="center">cv.geiser.cloud</h1>
@@ -15,12 +15,13 @@ One HTML file, no build. `index.html` holds the page and its print stylesheet, a
 - `index.html` is the whole site. Inline CSS, system fonts, no JavaScript.
 - Two blocks inside it are generated: the latest blog posts (from the [blog](https://geiser.cloud) RSS) and the top ten repositories by stars (from the GitHub API). `scripts/update_content.py` rewrites them and touches nothing else; `.github/workflows/update-content.yml` runs it every twelve hours and commits only when something changed. Hand-written project descriptions survive a refresh.
 - `.github/workflows/pages.yml` deploys the site with GitHub Actions and prints the CV with headless Chrome. It fails if the CV runs past three A4 pages.
-- `docs/redesign/` keeps the 2026 redesign material: the content brief, the audit of the old site, the two alternative mockups and their screenshots.
+- `.github/workflows/portfolio.yml` rebuilds the blog's [portfolio page](https://geiser.cloud/portfolio/) from the same repository list every six hours through [ghost-github-portfolio](https://github.com/GeiserX/ghost-github-portfolio); its config is `portfolio/config.yml`.
+- `docs/redesign/`, `docs/about-redesign/` and `docs/portfolio-redesign/` keep the 2026 redesign material: the content brief, the audit of the old site, the alternative mockups for this page, the blog's About page and its Portfolio page, and their screenshots.
 
 ## Editing
 
 Edit `index.html` and push to `main`. To refresh the generated blocks by hand: `python3 scripts/update_content.py index.html` (`--check` exits 1 if the page is behind).
 
-## Licence
+## License
 
-GPL-3.0, see [LICENSE](LICENSE).
+[GPL-3.0-or-later](LICENSE)
