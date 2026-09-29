@@ -28,7 +28,11 @@ Both use the same source as https://cv.geiser.cloud/: the top ten by stars from 
 
 **Cards**, [cards.html](cards.html) ([desktop](cards-desktop.png), [mobile](cards-mobile.png)), notes in [cards.md](cards.md). Two columns of cards with the repository banner on top, or a plain tile for the ones without a usable banner (CashPilot has none; DeclaRenta's banner references a relative logo file that browsers never load inside an `<img>`, so it comes out empty). Prettier, and closer to what the page is today. Because of the `<img` tags it can only be written through the origin, so it needs a job on a home box (a small container in the geiserback ghost stack, or a launchd job on a Mac mini), not a GitHub Action.
 
-## What I would do
+## What was done (2026-09-29, evening)
+
+The owner picked the cards, with three columns and 21 repositories. ghost-github-portfolio 0.4.0 produces exactly that page. The WAF on geiserback's Caddy now skips inspection for Ghost-authenticated Admin API calls (Ghost still checks the token), so the page is rewritten every six hours by `.github/workflows/portfolio.yml` in this repository on a GitHub-hosted runner, with `portfolio/config.yml` holding the one-liners and the key in a repository secret. Nothing runs on a home box. The rest of this file is the analysis as it stood before that decision.
+
+## What I would have done
 
 Ship the list now from the Action and archive ghost-github-portfolio. It has 0 stars, it exists for this one page, its output is the thing you want to get rid of, and its de-slopped README would describe a tool nobody else needs. If you want the banners, the cards variant is one script on geiserback and the same list underneath; the archive decision does not change.
 
