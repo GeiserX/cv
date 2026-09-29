@@ -26,7 +26,7 @@ This is the single source of facts for the mockups. Everything here was checked 
 
 | When | Where | Role | What, in one line |
 |---|---|---|---|
-| Jul 2025 to now | Xebia (consulting), Spain | Senior DevOps Engineer | Consulting for large clients on AWS and GCP: GitHub Enterprise and GitOps migrations, Terraform enablement, technical interviews. |
+| Jul 2025 to now | Xebia (consulting), Spain | Senior DevOps Engineer | Consulting for large clients on AWS and GCP: GitHub Enterprise and GitOps migrations, Terraform enablement. Technical interviews for Xebia's contractor hires (not for the client). |
 | Jan 2021 to Jun 2025 | Claranet Deutschland GmbH, Germany | Cloud DevOps Engineer | Kubernetes managed services for German clients. Led the Kubernetes production readiness assessment product, patch and upgrade management, and disaster recovery. GCP and AWS consultant. |
 | Jan 2020 to Dec 2020 | Telcaria Ideas SL, Spain | Edge 5G Network Research Engineer | 5G-DIVE EU/Taiwan research project: a PaaS and MLaaS on fog and edge resources (K3s, Helm, H2O.ai, GitLab CI, ArgoCD). |
 | Aug 2019 to Dec 2020 | Culture of Insight, UK | DevOps Consultant | Took an R analytics app for Twitch to production with Docker on DigitalOcean. |
