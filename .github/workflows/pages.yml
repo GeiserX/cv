@@ -30,6 +30,7 @@ jobs:
 
       - name: Print the CV from the page itself
         run: |
+          sudo apt-get update
           sudo apt-get install -y --no-install-recommends poppler-utils fonts-crosextra-caladea
           google-chrome --headless=new --no-sandbox --disable-gpu --no-pdf-header-footer \
             --print-to-pdf="$PWD/_site/sergio-fernandez-cv.pdf" "file://$PWD/_site/index.html"

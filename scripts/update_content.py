@@ -32,7 +32,7 @@ def posts_block(n):
     items = root.findall("./channel/item")[:n]
     lines = ['  <ol class="now-list">']
     for it in items:
-        title = html.escape(it.findtext("title", "").strip(), quote=False)
+        title = html.escape(plain(it.findtext("title", "").strip()), quote=False)
         link = html.escape(it.findtext("link", "").strip())
         lines.append(f'    <li><a href="{link}">{title}</a></li>')
     lines.append("  </ol>")
@@ -115,12 +115,14 @@ def main():
     old = open(path, encoding="utf-8").read()
     new = replace_block(old, "posts", posts_block(n_posts))
     new = replace_block(new, "projects", projects_block(n_projects, existing_lines(old)))
-    new = re.sub(r'(<span id="stars-date">Stars as of )[0-9-]+', lambda m: m.group(1) + date.today().isoformat(), new)
+    block = lambda t, k: re.search(rf"<!-- {k}:start.*?{k}:end -->", t, re.S).group(0)
+    changed = [k for k in ("posts", "projects") if block(old, k) != block(new, k)]
+    if "projects" in changed:  # the "Stars as of" date moves only when the stars did
+        new = re.sub(r'(<span id="stars-date">Stars as of )[0-9-]+', lambda m: m.group(1) + date.today().isoformat(), new)
     if "--check" in args:
-        changed = [k for k in ("posts", "projects") if re.search(rf"<!-- {k}:start.*?{k}:end -->", old, re.S).group(0) != re.search(rf"<!-- {k}:start.*?{k}:end -->", new, re.S).group(0)]
         print("would change:", changed or "nothing")
         sys.exit(1 if changed else 0)
-    if new != old:
+    if changed:
         open(path, "w", encoding="utf-8").write(new)
         print(f"updated {path}")
     else:
