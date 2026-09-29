@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sergio Fernández (GeiserX): AI agent tooling, open source, DevOps</title>
+<meta name="description" content="I build AI agent tooling and open-source desktop apps, run a homelab, and spent over ten years before that in DevOps, Kubernetes and networks. Murcia, Spain.">
+<meta name="author" content="Sergio Fernández">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#0f1114" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f7f7f4" media="(prefers-color-scheme: light)">
+<link rel="canonical" href="https://geiserx.github.io/">
+<link rel="icon" href="/favicon.ico">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://geiserx.github.io/">
+<meta property="og:title" content="Sergio Fernández (GeiserX)">
+<meta property="og:description" content="I build AI agent tooling and open-source desktop apps, run a homelab, and spent over ten years before that in DevOps, Kubernetes and networks.">
+<meta property="og:site_name" content="Sergio Fernández">
+<meta property="og:locale" content="en_GB">
+<meta property="profile:first_name" content="Sergio">
+<meta property="profile:last_name" content="Fernández">
+<meta property="profile:username" content="GeiserX">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Sergio Fernández",
+  "alternateName": "GeiserX",
+  "url": "https://geiserx.github.io/",
+  "email": "mailto:sergio@geiser.cloud",
+  "jobTitle": "Senior DevOps Engineer",
+  "description": "I build AI agent tooling and open-source desktop apps, run a homelab, and spent over ten years before that in DevOps, Kubernetes and networks.",
+  "address": { "@type": "PostalAddress", "addressLocality": "Murcia", "addressCountry": "ES" },
+  "knowsLanguage": ["en", "es"],
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "Edinburgh Napier University" },
+    { "@type": "CollegeOrUniversity", "name": "Universidad Politécnica de Cartagena" }
+  ],
+  "sameAs": [
+    "https://geiser.cloud",
+    "https://github.com/GeiserX",
+    "https://www.linkedin.com/in/sergiofdz/",
+    "https://mastodon.social/@geiser",
+    "https://hub.docker.com/u/drumsergio",
+    "https://t.me/geiserdrums"
+  ]
+}
+</script>
+<style>
+:root {
+  --bg: #0f1114;
+  --fg: #d5d8dc;
+  --dim: #8b929b;
+  --rule: #2a2f36;
+  --accent: #e0a458;
+  --font: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+}
+@media (prefers-color-scheme: light) {
+  :root { --bg: #f7f7f4; --fg: #1d1f22; --dim: #5c626a; --rule: #d6d9dc; --accent: #8a5200; }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--fg);
+  font: 14px/1.6 var(--font); font-variant-ligatures: none;
+}
+main { max-width: 1120px; margin: 0 auto; padding: 2rem 1.25rem 3rem; }
+a { color: var(--fg); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; }
+a:hover, a:focus-visible { color: var(--accent); text-decoration-color: var(--accent); }
+a:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
+.dim { color: var(--dim); }
+.acc { color: var(--accent); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+header .prompt { margin: 0 0 .9rem; color: var(--dim); }
+header h1 { margin: 0; font-size: 1.6rem; line-height: 1.25; font-weight: 700; }
+header .lede { margin: .5rem 0 .3rem; max-width: 72ch; }
+header .meta { margin: 0; color: var(--dim); }
+
+.grid { display: grid; grid-template-columns: 1fr 1fr; column-gap: 1.25rem; }
+.panel { grid-column: 1 / -1; position: relative; border: 1px solid var(--rule); padding: 1.15rem 1rem .85rem; margin-top: 1.9rem; min-width: 0; }
+.panel.half { grid-column: auto; }
+.panel > h2 {
+  position: absolute; top: -.8em; left: .7rem; margin: 0; padding: 0 .45rem;
+  background: var(--bg); color: var(--accent); font-size: 1rem; line-height: 1.6; font-weight: 700;
+}
+.panel > .tag {
+  position: absolute; top: -.8em; right: .7rem; padding: 0 .45rem;
+  background: var(--bg); color: var(--dim); font-size: .86rem; line-height: 1.85;
+}
+.panel p { margin: .2rem 0; }
+
+dl.kv { display: grid; grid-template-columns: 10ch 1fr; gap: .35rem 1rem; margin: 0; }
+dl.kv dt { color: var(--dim); }
+dl.kv dd { margin: 0; min-width: 0; }
+ol.posts { margin: .1rem 0 .35rem; padding: 0; list-style: none; counter-reset: p; }
+ol.posts li { counter-increment: p; display: grid; grid-template-columns: 3ch 1fr; }
+ol.posts li::before { content: counter(p) "."; color: var(--dim); }
+
+table { width: 100%; border-collapse: collapse; }
+th { text-align: left; font-weight: 400; color: var(--dim); border-bottom: 1px solid var(--rule); padding: 0 .9rem .3rem 0; }
+td { vertical-align: top; padding: .38rem .9rem .38rem 0; border-bottom: 1px dashed var(--rule); }
+tr:last-child td { border-bottom: 0; }
+th:last-child, td:last-child { padding-right: 0; }
+.nw { white-space: nowrap; }
+.num { text-align: right; font-variant-numeric: tabular-nums; }
+td.num { padding-right: 1.2rem; }
+.pill { color: var(--accent); }
+.exp { color: var(--dim); }
+tr.expired td:first-child a, tr.expired td:first-child { color: var(--dim); }
+.foot { margin-top: .6rem !important; color: var(--dim); }
+footer { max-width: 1120px; margin: 0 auto; padding: 0 1.25rem 2.5rem; color: var(--dim); }
+
+@media (max-width: 860px) {
+  .panel.half { grid-column: 1 / -1; }
+}
+@media (max-width: 720px) {
+  body { font-size: 13.5px; }
+  main { padding: 1.25rem .85rem 2rem; }
+  header h1 { font-size: 1.35rem; }
+  .panel { padding: 1.1rem .8rem .7rem; }
+  dl.kv { grid-template-columns: 1fr; gap: 0; }
+  dl.kv dt { margin-top: .5rem; }
+  dl.kv dt:first-child { margin-top: 0; }
+  table.stack thead { display: none; }
+  table.stack, table.stack tbody, table.stack tr, table.stack td { display: block; }
+  table.stack tr { padding: .5rem 0; border-bottom: 1px dashed var(--rule); }
+  table.stack tr:last-child { border-bottom: 0; }
+  table.stack td { border: 0; padding: 0; }
+  table.stack td.when, table.stack td.num { display: inline; color: var(--dim); }
+  table.stack td.where { font-weight: 700; }
+  #projects tr { display: flex; flex-wrap: wrap; column-gap: .6ch; }
+  #projects td.repo { order: 1; font-weight: 700; }
+  #projects td.lang { order: 2; color: var(--dim); }
+  #projects td.num { order: 3; color: var(--dim); text-align: left; padding: 0; }
+  #projects td.lang::before, #projects td.num::before { content: "· "; }
+  #projects td.num::after { content: " stars"; }
+  #projects td:last-child { order: 4; flex-basis: 100%; }
+}
+
+@media print {
+  @page { margin: 14mm 14mm 16mm; }
+  :root { --bg: #fff; --fg: #000; --dim: #444; --rule: #bbb; --accent: #000; }
+  body { font: 9.5pt/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  main { max-width: none; padding: 0; }
+  .noprint, header .prompt { display: none !important; }
+  header h1 { font-size: 18pt; }
+  a { color: #000; text-decoration: none; }
+  .grid { display: block; }
+  .panel { border: 0; padding: 0; margin-top: 11pt; }
+  .panel > h2 { position: static; padding: 0 0 2pt; margin: 0 0 4pt; border-bottom: 1px solid #000; font-size: 11pt; text-transform: capitalize; }
+  .panel > .tag { display: none; }
+  td, th { padding: 2.5pt 8pt 2.5pt 0; }
+  td { border-bottom: 0; }
+  tr, li, dd { break-inside: avoid; }
+  footer { display: none; }
+}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <p class="prompt" aria-hidden="true"><span class="acc">geiserx@murcia</span>:~$ whoami</p>
+  <h1>Sergio Fernández</h1>
+  <p class="lede">I build AI agent tooling and open-source desktop apps, run a homelab, and spent over ten years before that in DevOps, Kubernetes and networks.</p>
+  <p class="meta">Murcia, Spain · English and Spanish · <a href="mailto:sergio@geiser.cloud">sergio@geiser.cloud</a><span class="noprint"> · <a href="https://geiserx.github.io/CV_Sergio.pdf">CV (PDF)</a></span></p>
+</header>
+
+<div class="grid">
+
+<section class="panel" id="now" aria-labelledby="h-now">
+  <h2 id="h-now">now</h2>
+  <dl class="kv">
+    <dt>building</dt>
+    <dd><a href="https://github.com/GeiserX/akou">akou</a>, an open-source call recorder and dictation app for macOS. Transcription runs locally, and it works with Claude Code and Codex over MCP. Early prereleases. <a href="https://geiser.cloud/why-i-built-akou/" class="dim">Why I built it</a></dd>
+    <dt>writing</dt>
+    <dd>
+      <ol class="posts">
+        <li><a href="https://geiser.cloud/why-i-built-akou/">Why I built akou, one app for my calls and my dictation</a></li>
+        <li><a href="https://geiser.cloud/on-overengineering-devops-edition/">Overengineering in DevOps, and the network project that could have been an email</a></li>
+        <li><a href="https://geiser.cloud/the-day-the-region-died-lessons-in-disaster-recovery/">What disaster recovery needs when the region dies</a></li>
+        <li><a href="https://geiser.cloud/deploying-garage-s3-v2-x-and-hooking-it-up-to-duplicacy/">Deploying a three-node Garage S3 cluster and hooking it up to Duplicacy</a></li>
+        <li><a href="https://geiser.cloud/putting-ai-hands-on-routers-building-a-genieacs-mcp-server-in-go/">Building a GenieACS MCP server in Go so an LLM can manage routers</a></li>
+      </ol>
+      <span class="dim">22 posts on Kubernetes, DevOps, networks, homelab and AI tooling at</span> <a href="https://geiser.cloud">geiser.cloud</a>
+    </dd>
+    <dt>homelab</dt>
+    <dd>Unraid servers, Mac minis, Tailscale and Gitea. The blog runs there too.</dd>
+  </dl>
+</section>
+
+<section class="panel" id="work" aria-labelledby="h-work">
+  <h2 id="h-work">work</h2>
+  <span class="tag" aria-hidden="true">2014 to now</span>
+  <table class="stack">
+    <caption class="sr">Work experience, most recent first</caption>
+    <thead><tr><th scope="col">when</th><th scope="col">where</th><th scope="col">role</th><th scope="col">what</th></tr></thead>
+    <tbody>
+      <tr><td class="when nw">2025-07 to now</td><td class="where">Xebia <span class="dim">(consulting), Spain</span></td><td>Senior DevOps Engineer</td><td>Consulting for large clients on AWS and GCP: GitHub Enterprise and GitOps migrations, Terraform enablement, technical interviews.</td></tr>
+      <tr><td class="when nw">2021-01 to 2025-06</td><td class="where">Claranet Deutschland GmbH <span class="dim">Germany</span></td><td>Cloud DevOps Engineer</td><td>Kubernetes managed services for German clients. Led the Kubernetes production readiness assessment product, patch and upgrade management, and disaster recovery. GCP and AWS consultant.</td></tr>
+      <tr><td class="when nw">2020-01 to 2020-12</td><td class="where">Telcaria Ideas SL <span class="dim">Spain</span></td><td>Edge 5G Network Research Engineer</td><td>5G-DIVE EU/Taiwan research project: a PaaS and MLaaS on fog and edge resources (K3s, Helm, H2O.ai, GitLab CI, ArgoCD).</td></tr>
+      <tr><td class="when nw">2019-08 to 2020-12</td><td class="where">Culture of Insight <span class="dim">UK</span></td><td>DevOps Consultant</td><td>Took an R analytics app for Twitch to production with Docker on DigitalOcean.</td></tr>
+      <tr><td class="when nw">2016-05 to 2019-12</td><td class="where">ACSdesk <span class="dim">(my own company), Spain</span></td><td>Founder, GenieACS Engineer</td><td>Deployed and operated GenieACS, zero-touch CPE provisioning, for ISPs in Spain, Switzerland, Chile and India.</td></tr>
+      <tr><td class="when nw">2019-02 to 2019-12</td><td class="where">AP Data Services Ltd <span class="dim">UK</span></td><td>Software and Cloud DevOps Engineer</td><td>R Shiny products for UK financial services and car-part resellers, ShinyProxy, AWS.</td></tr>
+      <tr><td class="when nw">2018-05 to 2019-07</td><td class="where">Good Peoples Connected <span class="dim">France</span></td><td>Technical Partner</td><td>Designed an IoT Wi-Fi voucher device on Raspberry Pi for hotels in Guadeloupe: Python, Ansible/AWX, Vault, FreeCAD enclosures. <a href="https://geiser.cloud/building-the-pispot-watch-an-iot-adventure/" class="dim noprint">post</a></td></tr>
+      <tr><td class="when nw">2017-09 to 2018-09</td><td class="where">Anvimur Telecomunicaciones <span class="dim">Spain</span></td><td>NetDevOps and Software Engineer</td><td>Automated router deployment for an ISP: ONT integration, Huawei OLT, TR-069, LibreACS to GenieACS migration.</td></tr>
+      <tr><td class="when nw">2016-03 to 2017-08</td><td class="where">InnoXess <span class="dim">Switzerland</span></td><td>Software, Network and Systems Engineer</td><td>GenieACS deployment and maintenance for a Swiss project: Ruby on Rails, MongoDB, Redis, Docker.</td></tr>
+      <tr><td class="when nw">2015-07 to 2016-05</td><td class="where">Electrónica Martínez <span class="dim">Spain</span></td><td>Software, Network and Systems Engineer <span class="dim">(internship, then hired)</span></td><td>ISP work: cut new-customer router setup from 30 minutes to 3 with zero-touch provisioning. Built the "impossible" Wi-Fi hotspot map of 200+ APs. Odoo ERP integration. <span class="noprint"><a href="https://geiser.cloud/0-touch-provisioning-with-tr069-and-dhcp66/" class="dim">post</a> <a href="https://geiser.cloud/the-day-i-was-told-its-impossible/" class="dim">post</a></span></td></tr>
+      <tr><td class="when nw">2014-07 to 2014-09</td><td class="where">Repsol <span class="dim">Spain</span></td><td>Control and Optimization Engineer <span class="dim">(internship)</span></td><td>Honeywell process control systems, PID and multivariable control.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="panel" id="projects" aria-labelledby="h-projects">
+  <h2 id="h-projects">projects</h2>
+  <span class="tag" id="stars-note">stars on 2026-09-29</span>
+  <table class="stack">
+    <caption class="sr">Open-source projects on GitHub, akou first, then by stars</caption>
+    <thead><tr><th scope="col" class="num">stars</th><th scope="col">repo</th><th scope="col">lang</th><th scope="col">what</th></tr></thead>
+    <tbody>
+      <tr class="pin"><td class="num" data-repo="akou">2</td><td class="repo nw"><a href="https://github.com/GeiserX/akou">akou</a> <span class="pill">pinned</span></td><td class="lang">TypeScript</td><td>Call recorder and dictation for macOS, local transcription, MCP for Claude Code and Codex.</td></tr>
+      <tr><td class="num" data-repo="Telegram-Archive">215</td><td class="repo nw"><a href="https://github.com/GeiserX/Telegram-Archive">Telegram-Archive</a></td><td class="lang">Python</td><td>Own your Telegram history: incremental backups with a local viewer that feels like the real app. <a href="https://geiserx.github.io/Telegram-Archive/" class="dim noprint">site</a></td></tr>
+      <tr><td class="num" data-repo="genieacs-container">135</td><td class="repo nw"><a href="https://github.com/GeiserX/genieacs-container">genieacs-container</a></td><td class="lang">Dockerfile</td><td>The original and most used container and Helm chart for GenieACS. <a href="https://geiser.cloud/how-to-deploy-genieacs/" class="dim noprint">guide</a></td></tr>
+      <tr><td class="num" data-repo="VPN-Bypass">122</td><td class="repo nw"><a href="https://github.com/GeiserX/VPN-Bypass">VPN-Bypass</a></td><td class="lang">Swift</td><td>macOS menu-bar app for per-domain VPN routing, with a CLI.</td></tr>
+      <tr><td class="num" data-repo="whisper-subs">103</td><td class="repo nw"><a href="https://github.com/GeiserX/whisper-subs">whisper-subs</a></td><td class="lang">C#</td><td>Jellyfin plugin that generates subtitles locally with Whisper. <a href="https://geiserx.github.io/whisper-subs/" class="dim noprint">site</a></td></tr>
+      <tr><td class="num" data-repo="CashPilot">53</td><td class="repo nw"><a href="https://github.com/GeiserX/CashPilot">CashPilot</a></td><td class="lang">Python</td><td>Self-hosted passive income platform: deploy once, track earnings. <a href="https://geiserx.github.io/CashPilot" class="dim noprint">site</a></td></tr>
+      <tr><td class="num" data-repo="LynxPrompt">49</td><td class="repo nw"><a href="https://github.com/GeiserX/LynxPrompt">LynxPrompt</a></td><td class="lang">TypeScript</td><td>Self-hosted, federated platform for AI IDE rules and commands (AGENTS.md, CLAUDE.md). <a href="https://lynxprompt.com" class="dim noprint">site</a></td></tr>
+      <tr><td class="num" data-repo="DeclaRenta">48</td><td class="repo nw"><a href="https://github.com/GeiserX/DeclaRenta">DeclaRenta</a></td><td class="lang">TypeScript</td><td>Turns foreign broker reports into Spanish tax filings (Modelo 100, 720, 721, D-6). Free, private, self-hosted. <a href="https://declarenta.com" class="dim noprint">site</a></td></tr>
+      <tr><td class="num" data-repo="Wayback-Archive">38</td><td class="repo nw"><a href="https://github.com/GeiserX/Wayback-Archive">Wayback-Archive</a></td><td class="lang">Python</td><td>Download complete websites from the Wayback Machine for offline viewing.</td></tr>
+      <tr><td class="num" data-repo="Pumperly">38</td><td class="repo nw"><a href="https://github.com/GeiserX/Pumperly">Pumperly</a></td><td class="lang">TypeScript</td><td>Open-source fuel and EV route planner with real-time prices. <a href="https://pumperly.com" class="dim noprint">site</a></td></tr>
+      <tr><td class="num" data-repo="smart-covers">18</td><td class="repo nw"><a href="https://github.com/GeiserX/smart-covers">smart-covers</a></td><td class="lang">C#</td><td>Jellyfin plugin: cover extraction from PDF, EPUB and audiobooks.</td></tr>
+    </tbody>
+  </table>
+  <p class="foot">Building things nobody asked for, one repo at a time. About 200 more at <a href="https://github.com/GeiserX?tab=repositories">github.com/GeiserX</a>.</p>
+</section>
+
+<section class="panel half" id="education" aria-labelledby="h-education">
+  <h2 id="h-education">education</h2>
+  <dl class="kv">
+    <dt class="nw">2020-2022</dt>
+    <dd>MSc Data Engineering, Edinburgh Napier University. Dissertation on disaster recovery of managed Kubernetes (EKS, GKE). <a href="https://geiser.cloud/the-day-i-ddosd-amazon-eks-google-gke-to-study-disaster-recovery-for-my-msc-dissertation/" class="dim noprint">post</a></dd>
+    <dt class="nw">2011-2015</dt>
+    <dd>BEng Telecommunication Systems Engineering, Universidad Politécnica de Cartagena. Graduated second in class. The final project received an honourable mention.</dd>
+  </dl>
+</section>
+
+<section class="panel half" id="certs" aria-labelledby="h-certs">
+  <h2 id="h-certs">certs</h2>
+  <span class="tag" aria-hidden="true">checked 2026-09-28</span>
+  <table>
+    <caption class="sr">Certifications</caption>
+    <thead><tr><th scope="col">name</th><th scope="col" class="nw">status</th></tr></thead>
+    <tbody>
+      <tr><td><a href="https://www.credly.com/badges/816320ad-ed15-41a1-98f7-f4d134ff9a44/public_url">AWS Certified Solutions Architect, Professional</a></td><td></td></tr>
+      <tr><td><a href="https://learn.microsoft.com/en-us/users/sergiofz/credentials/62c37378fe6b23b5">GitHub Actions (Microsoft)</a></td><td></td></tr>
+      <tr><td>Huawei Certified Network Associate, Routing and Switching</td><td></td></tr>
+      <tr><td>Certificate in Advanced English, C1</td><td></td></tr>
+      <tr class="expired"><td><a href="https://www.credly.com/badges/280dfe0a-7f95-4efd-988c-833a2ce50bb3">CKA, Certified Kubernetes Administrator</a></td><td class="exp nw">2021, expired</td></tr>
+      <tr class="expired"><td><a href="https://www.credly.com/badges/5b013852-5840-4003-8d88-f57046f0f867">AWS Certified Solutions Architect, Associate</a></td><td class="exp nw">2020, expired</td></tr>
+      <tr class="expired"><td><a href="https://www.credly.com/badges/95cfef44-d320-4783-bfcd-191e8036edaa">HashiCorp Certified Terraform Associate</a></td><td class="exp nw">2020, expired</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="panel" id="links" aria-labelledby="h-links">
+  <h2 id="h-links">links</h2>
+  <dl class="kv">
+    <dt>email</dt><dd><a href="mailto:sergio@geiser.cloud">sergio@geiser.cloud</a></dd>
+    <dt>blog</dt><dd><a href="https://geiser.cloud">geiser.cloud</a></dd>
+    <dt>github</dt><dd><a href="https://github.com/GeiserX">github.com/GeiserX</a> <span class="dim">about 200 public repos</span></dd>
+    <dt>linkedin</dt><dd><a href="https://www.linkedin.com/in/sergiofdz/">linkedin.com/in/sergiofdz</a></dd>
+    <dt>mastodon</dt><dd><a rel="me" href="https://mastodon.social/@geiser">mastodon.social/@geiser</a></dd>
+    <dt>docker</dt><dd><a href="https://hub.docker.com/u/drumsergio">hub.docker.com/u/drumsergio</a></dd>
+    <dt>telegram</dt><dd><a href="https://t.me/geiserdrums">t.me/geiserdrums</a></dd>
+    <dt class="noprint">cv</dt><dd class="noprint"><a href="https://geiserx.github.io/CV_Sergio.pdf">CV_Sergio.pdf</a></dd>
+  </dl>
+</section>
+
+</div>
+</main>
+<footer><p>Strong opinions, loosely held. · <a href="https://github.com/GeiserX/geiserx.github.io">source</a></p></footer>
+
+<script>
+// Progressive: refresh star counts from GitHub. The numbers in the HTML stay if this fails.
+(function () {
+  if (!window.fetch) return;
+  var cells = document.querySelectorAll('#projects [data-repo]');
+  var want = {};
+  cells.forEach(function (c) { want[c.dataset.repo.toLowerCase()] = c; });
+  var stars = {};
+  function page(n) {
+    return fetch('https://api.github.com/users/GeiserX/repos?per_page=100&page=' + n)
+      .then(function (r) { if (!r.ok) throw r.status; return r.json(); })
+      .then(function (list) {
+        list.forEach(function (repo) { stars[repo.name.toLowerCase()] = repo.stargazers_count; });
+        if (list.length === 100 && n < 5) return page(n + 1);
+      });
+  }
+  page(1).then(function () {
+    var names = Object.keys(want);
+    if (!names.every(function (k) { return typeof stars[k] === 'number'; })) return;
+    names.forEach(function (k) { want[k].textContent = stars[k]; });
+    var tbody = document.querySelector('#projects tbody');
+    Array.prototype.slice.call(tbody.querySelectorAll('tr:not(.pin)'))
+      .sort(function (a, b) { return +b.querySelector('[data-repo]').textContent - +a.querySelector('[data-repo]').textContent; })
+      .forEach(function (tr) { tbody.appendChild(tr); });
+    document.getElementById('stars-note').textContent = 'stars live from GitHub';
+  }).catch(function () {});
+})();
+</script>
+</body>
+</html>
