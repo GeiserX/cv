@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sergio Fernández, DevOps engineer and open-source developer</title>
-<meta name="description" content="Sergio Fernández (GeiserX). I build AI agent tooling and open-source desktop apps, run a homelab, and spent over ten years before that in DevOps, Kubernetes and networks.">
+<title>Sergio Fernández</title>
+<meta name="description" content="Sergio Fernández (GeiserX). AI innovator with over ten years in DevOps, Kubernetes, networks, distributed systems and software engineering. Murcia, Spain.">
 <meta name="author" content="Sergio Fernández">
 <meta name="color-scheme" content="light dark">
 <link rel="canonical" href="https://geiserx.github.io/">
@@ -12,7 +12,7 @@
 <link rel="me" href="https://github.com/GeiserX">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Sergio Fernández">
-<meta property="og:description" content="I build AI agent tooling and open-source desktop apps, run a homelab, and spent over ten years before that in DevOps, Kubernetes and networks.">
+<meta property="og:description" content="AI innovator with over ten years in DevOps, Kubernetes, networks, distributed systems and software engineering.">
 <meta property="og:url" content="https://geiserx.github.io/">
 <meta property="og:site_name" content="Sergio Fernández">
 <meta property="og:locale" content="en_GB">
@@ -20,6 +20,8 @@
 <meta property="profile:last_name" content="Fernández">
 <meta property="profile:username" content="GeiserX">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@GeiresX">
+<meta name="twitter:creator" content="@GeiresX">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -28,9 +30,9 @@
   "alternateName": "GeiserX",
   "url": "https://geiserx.github.io/",
   "email": "mailto:sergio@geiser.cloud",
-  "jobTitle": "Senior DevOps Engineer",
+  "jobTitle": "AI innovator, DevOps and platform engineer",
   "address": { "@type": "PostalAddress", "addressLocality": "Murcia", "addressCountry": "ES" },
-  "knowsLanguage": ["en", "es"],
+  "knowsLanguage": ["en", "es", "bg"],
   "alumniOf": [
     { "@type": "CollegeOrUniversity", "name": "Edinburgh Napier University" },
     { "@type": "CollegeOrUniversity", "name": "Universidad Politécnica de Cartagena" }
@@ -38,9 +40,11 @@
   "sameAs": [
     "https://geiser.cloud",
     "https://github.com/GeiserX",
+    "https://x.com/GeiresX",
     "https://www.linkedin.com/in/sergiofdz/",
     "https://mastodon.social/@geiser",
     "https://hub.docker.com/u/drumsergio",
+    "https://stackoverflow.com/users/2236231",
     "https://t.me/geiserdrums"
   ]
 }
@@ -97,7 +101,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .num { font-variant-numeric: tabular-nums lining-nums; }
 
 /* Header */
-.lede { font-size: 1.15rem; margin: 0.75rem 0 0.5rem; max-width: 58ch; }
+.lede { font-size: 1.15rem; margin: 0.75rem 0 0.5rem; max-width: 60ch; }
 .where { color: var(--muted); margin: 0 0 1.25rem; }
 .links { display: flex; flex-wrap: wrap; gap: 0.35rem 1.4rem; }
 nav { margin-top: 1.75rem; font-size: 0.9rem; }
@@ -144,6 +148,10 @@ h3 { font-size: 1rem; margin: 1.5rem 0 0.5rem; }
 .certs li { padding: 0.2rem 0; }
 .certs .expired { color: var(--muted); }
 
+/* Skills */
+.skills dt { font-weight: 600; margin-top: 0.8rem; }
+.skills dd { margin: 0.15rem 0 0; }
+
 footer { margin-top: 4rem; padding-top: 1rem; border-top: 1px solid var(--rule); color: var(--muted); font-size: 0.9rem; }
 
 @media (max-width: 36rem) {
@@ -165,7 +173,7 @@ footer { margin-top: 4rem; padding-top: 1rem; border-top: 1px solid var(--rule);
   html, body { background: #fff; }
   body { padding: 0; }
   main, header, footer { max-width: none; }
-  nav, #now, footer .screen-only, .projects .site { display: none; }
+  nav, #now .now-list, #now h3, footer .screen-only, .projects .site { display: none; }
   a { color: inherit; text-decoration: none; }
   h1 { font-size: 1.9rem; }
   .lede { font-size: 1.05rem; margin: 0.4rem 0 0.25rem; max-width: none; }
@@ -173,6 +181,7 @@ footer { margin-top: 4rem; padding-top: 1rem; border-top: 1px solid var(--rule);
   h2 { margin: 1.35rem 0 0.5rem; padding-bottom: 0.25rem; break-after: avoid; page-break-after: avoid; }
   .rows > li, .projects li { padding: 0.22rem 0; break-inside: avoid; page-break-inside: avoid; }
   .certs li { padding: 0.08rem 0; }
+  .skills dt { margin-top: 0.4rem; }
   footer { margin-top: 1.5rem; padding-top: 0.5rem; }
 }
 </style>
@@ -181,10 +190,11 @@ footer { margin-top: 4rem; padding-top: 1rem; border-top: 1px solid var(--rule);
 
 <header>
   <h1>Sergio Fernández</h1>
-  <p class="lede">I build AI agent tooling and open-source desktop apps, run a homelab, and spent over ten years before that in DevOps, Kubernetes and networks.</p>
-  <p class="where">Murcia, Spain. English and Spanish.</p>
+  <p class="lede">AI innovator. I put AI agents to work on real infrastructure, and I still do the DevOps, Kubernetes, networking, distributed systems and software engineering I have done for over ten years. Open source and a homelab are what I do for fun.</p>
+  <p class="where">Murcia, Spain. English, Spanish and Bulgarian.</p>
   <ul class="links">
     <li><a href="mailto:sergio@geiser.cloud">sergio@geiser.cloud</a></li>
+    <li><a href="https://x.com/GeiresX" rel="me">x.com/GeiresX</a></li>
     <li><a href="https://geiser.cloud">geiser.cloud</a></li>
     <li><a href="https://github.com/GeiserX">github.com/GeiserX</a></li>
     <li><a href="https://www.linkedin.com/in/sergiofdz/">linkedin.com/in/sergiofdz</a></li>
@@ -206,9 +216,10 @@ footer { margin-top: 4rem; padding-top: 1rem; border-top: 1px solid var(--rule);
 
 <section id="now" aria-labelledby="now-h">
   <h2 id="now-h">Now</h2>
-  <p>I'm building <a href="https://github.com/GeiserX/akou">akou</a>, an open-source call recorder and dictation app for macOS. It transcribes locally and works with Claude Code and Codex over MCP. It is in early prereleases. I wrote about <a href="https://geiser.cloud/why-i-built-akou/">why I built it</a>.</p>
-  <p>I run a homelab of Unraid servers and Mac minis on Tailscale and Gitea. The blog runs there too.</p>
-  <h3>Latest on <a href="https://geiser.cloud">the blog</a></h3>
+  <p>Through <a href="https://xebia.com">Xebia</a> I work with The Walt Disney Company on platform engineering: GitHub Enterprise and GitOps migrations, Terraform enablement, identity and access, AWS and GCP, and I run technical interviews for the client. I also collaborate with San Francisco-based projects on AI agent infrastructure.</p>
+  <p>For fun, open source and a homelab: about 200 public repositories on <a href="https://github.com/GeiserX">GitHub</a> and <a href="https://geiser.cloud">a blog</a> where I write up what breaks and what I learn.</p>
+  <h3>Latest on the blog</h3>
+  <!-- posts:start (rewritten by scripts/update_content.py from https://geiser.cloud/rss/) -->
   <ol class="now-list">
     <li><a href="https://geiser.cloud/why-i-built-akou/">Why I built akou, one app for my calls and my dictation</a></li>
     <li><a href="https://geiser.cloud/on-overengineering-devops-edition/">Overengineering in DevOps, and the network project that could have been an email</a></li>
@@ -216,63 +227,64 @@ footer { margin-top: 4rem; padding-top: 1rem; border-top: 1px solid var(--rule);
     <li><a href="https://geiser.cloud/deploying-garage-s3-v2-x-and-hooking-it-up-to-duplicacy/">Deploying a three-node Garage S3 cluster and hooking it up to Duplicacy</a></li>
     <li><a href="https://geiser.cloud/putting-ai-hands-on-routers-building-a-genieacs-mcp-server-in-go/">Building a GenieACS MCP server in Go so an LLM can manage routers</a></li>
   </ol>
+  <!-- posts:end -->
 </section>
 
 <section id="experience" aria-labelledby="experience-h">
   <h2 id="experience-h">Experience</h2>
   <ul class="rows">
     <li>
-      <span class="when">Jul 2025 – now</span>
+      <span class="when">Jul 2025 to now</span>
       <div><span class="role">Senior DevOps Engineer</span>, <span class="at">Xebia, Spain</span>
-        <p class="what">Consulting for large clients on AWS and GCP: GitHub Enterprise and GitOps migrations, Terraform enablement, technical interviews.</p></div>
+        <p class="what">Platform engineering for The Walt Disney Company: GitHub Enterprise and GitOps migrations, Terraform enablement, identity and access, AWS and GCP. Technical interviews for the client.</p></div>
     </li>
     <li>
-      <span class="when">Jan 2021 – Jun 2025</span>
+      <span class="when">Jan 2021 to Jun 2025</span>
       <div><span class="role">Cloud DevOps Engineer</span>, <span class="at">Claranet Deutschland GmbH, Germany</span>
-        <p class="what">Kubernetes managed services for German clients. I led the Kubernetes production readiness assessment product, patch and upgrade management, and disaster recovery.</p></div>
+        <p class="what">Kubernetes managed services for German clients. I led the <a href="https://geiser.cloud/kubernetes-production-readiness-assessment-how-i-developed-the-product/">Kubernetes production readiness assessment</a> product, <a href="https://geiser.cloud/upgrade-management-at-scale-an-invisible-art/">upgrade management</a> across dozens of clusters, <a href="https://geiser.cloud/the-day-the-region-died-lessons-in-disaster-recovery/">disaster recovery</a>, <a href="https://geiser.cloud/kubernetes-cost-cutting-that-actually-works-rightsizing-at-scale/">rightsizing</a> and <a href="https://geiser.cloud/dockerhub-rate-limit-doom-a-kubernetes-odyssey/">the move off Docker Hub</a>. GCP and AWS consultant.</p></div>
     </li>
     <li>
-      <span class="when">Jan 2020 – Dec 2020</span>
+      <span class="when">Jan 2020 to Dec 2020</span>
       <div><span class="role">Edge 5G Network Research Engineer</span>, <span class="at">Telcaria Ideas SL, Spain</span>
         <p class="what">5G-DIVE, an EU and Taiwan research project: a PaaS and MLaaS on fog and edge resources with K3s, Helm, H2O.ai, GitLab CI and ArgoCD.</p></div>
     </li>
     <li>
-      <span class="when">Aug 2019 – Dec 2020</span>
+      <span class="when">Aug 2019 to Dec 2020</span>
       <div><span class="role">DevOps Consultant</span>, <span class="at">Culture of Insight, UK</span>
         <p class="what">Took an R analytics app for Twitch to production with Docker on DigitalOcean.</p></div>
     </li>
     <li>
-      <span class="when">May 2016 – Dec 2019</span>
+      <span class="when">May 2016 to Dec 2019</span>
       <div><span class="role">Founder, GenieACS Engineer</span>, <span class="at">ACSdesk, Spain</span>
-        <p class="what">My own company. Deployed and operated GenieACS zero-touch CPE provisioning for ISPs in Spain, Switzerland, Chile and India.</p></div>
+        <p class="what">My own company. Deployed and operated GenieACS zero-touch CPE provisioning for ISPs in Spain, Switzerland, Chile and India. The <a href="https://github.com/GeiserX/genieacs-container">container and Helm chart</a> and the <a href="https://github.com/GeiserX/genieacs-services">systemd services</a> from that work are still the most used ones; <a href="https://geiser.cloud/how-to-deploy-genieacs/">how I deploy it</a> and <a href="https://geiser.cloud/mastering-genieacs-real-world-experiences-and-pro-tips-from-my-journey/">the API recipes</a> are on the blog.</p></div>
     </li>
     <li>
-      <span class="when">Feb 2019 – Dec 2019</span>
+      <span class="when">Feb 2019 to Dec 2019</span>
       <div><span class="role">Software and Cloud DevOps Engineer</span>, <span class="at">AP Data Services Ltd, UK</span>
-        <p class="what">R Shiny products for UK financial services and car-part resellers, on ShinyProxy and AWS.</p></div>
+        <p class="what">R Shiny products for UK financial services and car-part resellers, on ShinyProxy and AWS. <a href="https://github.com/GeiserX/AdamPartsFinder">AdamPartsFinder</a> is the price-comparison proof of concept from that time.</p></div>
     </li>
     <li>
-      <span class="when">May 2018 – Jul 2019</span>
+      <span class="when">May 2018 to Jul 2019</span>
       <div><span class="role">Technical Partner</span>, <span class="at">Good Peoples Connected, France</span>
-        <p class="what">Designed <a href="https://geiser.cloud/building-the-pispot-watch-an-iot-adventure/">an IoT Wi-Fi voucher device</a> on Raspberry Pi for hotels in Guadeloupe: Python, Ansible and AWX, Vault, FreeCAD enclosures.</p></div>
+        <p class="what">Designed <a href="https://geiser.cloud/building-the-pispot-watch-an-iot-adventure/">an IoT Wi-Fi voucher device</a> on Raspberry Pi for hotels in Guadeloupe: Python, Ansible and AWX, Vault, FreeCAD enclosures. Code: <a href="https://github.com/GeiserX/PiSpot-Watch">PiSpot-Watch</a>, <a href="https://github.com/GeiserX/PiSpot-Show">PiSpot-Show</a>.</p></div>
     </li>
     <li>
-      <span class="when">Sep 2017 – Sep 2018</span>
+      <span class="when">Sep 2017 to Sep 2018</span>
       <div><span class="role">NetDevOps and Software Engineer</span>, <span class="at">Anvimur Telecomunicaciones, Spain</span>
         <p class="what">Automated router deployment for an ISP: ONT integration, Huawei OLT, TR-069, and a LibreACS to GenieACS migration.</p></div>
     </li>
     <li>
-      <span class="when">Mar 2016 – Aug 2017</span>
+      <span class="when">Mar 2016 to Aug 2017</span>
       <div><span class="role">Software, Network and Systems Engineer</span>, <span class="at">InnoXess, Switzerland</span>
         <p class="what">GenieACS deployment and maintenance for a Swiss project: Ruby on Rails, MongoDB, Redis, Docker.</p></div>
     </li>
     <li>
-      <span class="when">Jul 2015 – May 2016</span>
+      <span class="when">Jul 2015 to May 2016</span>
       <div><span class="role">Software, Network and Systems Engineer</span>, <span class="at">Electrónica Martínez, Spain</span>
-        <p class="what">Internship, then hired. Cut new-customer router setup from 30 minutes to 3 with <a href="https://geiser.cloud/0-touch-provisioning-with-tr069-and-dhcp66/">zero-touch provisioning</a>, built <a href="https://geiser.cloud/the-day-i-was-told-its-impossible/">the "impossible" hotspot map</a> of 200+ APs, and integrated Odoo ERP.</p></div>
+        <p class="what">Internship, then hired. Cut new-customer router setup from 30 minutes to 3 with <a href="https://geiser.cloud/0-touch-provisioning-with-tr069-and-dhcp66/">zero-touch provisioning</a> (<a href="https://github.com/GeiserX/router-express">router-express</a>), built <a href="https://geiser.cloud/the-day-i-was-told-its-impossible/">the "impossible" hotspot map</a> of 200+ APs (<a href="https://github.com/GeiserX/statix">statix</a>, <a href="https://github.com/GeiserX/services-isp">services-isp</a>), and moved the company to Odoo (<a href="https://github.com/GeiserX/import-xgest-odoo">import-xgest-odoo</a>).</p></div>
     </li>
     <li>
-      <span class="when">Jul 2014 – Sep 2014</span>
+      <span class="when">Jul 2014 to Sep 2014</span>
       <div><span class="role">Control and Optimization Engineer</span>, <span class="at">Repsol, Spain</span>
         <p class="what">Internship. Honeywell process control systems, PID and multivariable control.</p></div>
     </li>
@@ -281,13 +293,9 @@ footer { margin-top: 4rem; padding-top: 1rem; border-top: 1px solid var(--rule);
 
 <section id="projects" aria-labelledby="projects-h">
   <h2 id="projects-h">Projects</h2>
-  <p class="muted">Open source, on <a href="https://github.com/GeiserX">GitHub</a>. Stars as of September 2026.</p>
+  <p class="muted">Open source, on <a href="https://github.com/GeiserX">GitHub</a>, by stars. <span id="stars-date">Stars as of 2026-09-29</span>; a scheduled job keeps them current.</p>
+  <!-- projects:start (rewritten by scripts/update_content.py from the GitHub API) -->
   <ul class="projects">
-    <li>
-      <div><a class="name" href="https://github.com/GeiserX/akou">akou</a>
-        <span class="line">Call recorder and dictation for macOS with local transcription, for Claude Code and Codex over MCP.</span></div>
-      <span class="stars">prerelease</span>
-    </li>
     <li>
       <div><a class="name" href="https://github.com/GeiserX/Telegram-Archive">Telegram-Archive</a>
         <span class="line">Own your Telegram history: incremental backups with a local viewer that feels like the real app. <a class="site" href="https://geiserx.github.io/Telegram-Archive/">Site</a></span></div>
@@ -324,13 +332,13 @@ footer { margin-top: 4rem; padding-top: 1rem; border-top: 1px solid var(--rule);
       <span class="stars">48 stars</span>
     </li>
     <li>
-      <div><a class="name" href="https://github.com/GeiserX/Wayback-Archive">Wayback-Archive</a>
-        <span class="line">Download complete websites from the Wayback Machine for offline viewing.</span></div>
+      <div><a class="name" href="https://github.com/GeiserX/Pumperly">Pumperly</a>
+        <span class="line">Open-source fuel and EV route planner with real-time prices. <a class="site" href="https://pumperly.com">Site</a></span></div>
       <span class="stars">38 stars</span>
     </li>
     <li>
-      <div><a class="name" href="https://github.com/GeiserX/Pumperly">Pumperly</a>
-        <span class="line">Open-source fuel and EV route planner with real-time prices. <a class="site" href="https://pumperly.com">Site</a></span></div>
+      <div><a class="name" href="https://github.com/GeiserX/Wayback-Archive">Wayback-Archive</a>
+        <span class="line">Download complete websites from the Wayback Machine for offline viewing.</span></div>
       <span class="stars">38 stars</span>
     </li>
     <li>
@@ -339,20 +347,21 @@ footer { margin-top: 4rem; padding-top: 1rem; border-top: 1px solid var(--rule);
       <span class="stars">18 stars</span>
     </li>
   </ul>
+  <!-- projects:end -->
 </section>
 
 <section id="education" aria-labelledby="education-h">
   <h2 id="education-h">Education</h2>
   <ul class="rows">
     <li>
-      <span class="when">2020 – 2022</span>
+      <span class="when">2020 to 2022</span>
       <div><span class="role">MSc Data Engineering</span>, <span class="at">Edinburgh Napier University</span>
         <p class="what">Dissertation on <a href="https://geiser.cloud/the-day-i-ddosd-amazon-eks-google-gke-to-study-disaster-recovery-for-my-msc-dissertation/">disaster recovery of managed Kubernetes</a> (EKS, GKE).</p></div>
     </li>
     <li>
-      <span class="when">2011 – 2015</span>
+      <span class="when">2011 to 2015</span>
       <div><span class="role">BEng Telecommunication Systems Engineering</span>, <span class="at">Universidad Politécnica de Cartagena</span>
-        <p class="what">Graduated second in class. My final project received an honourable mention.</p></div>
+        <p class="what">Graduated second in class. My final project, <a href="https://geiser.cloud/0-touch-provisioning-with-tr069-and-dhcp66/">zero-touch CPE provisioning with DHCP option 66 and TR-069</a>, received an honourable mention.</p></div>
     </li>
   </ul>
 </section>
@@ -360,19 +369,26 @@ footer { margin-top: 4rem; padding-top: 1rem; border-top: 1px solid var(--rule);
 <section id="certifications" aria-labelledby="certifications-h">
   <h2 id="certifications-h">Certifications</h2>
   <ul class="certs">
-    <li><a href="https://www.credly.com/badges/816320ad-ed15-41a1-98f7-f4d134ff9a44/public_url">AWS Certified Solutions Architect, Professional</a></li>
+    <li><a href="https://www.credly.com/badges/816320ad-ed15-41a1-98f7-f4d134ff9a44/public_url">AWS Certified Solutions Architect, Professional</a>, 2026</li>
     <li><a href="https://learn.microsoft.com/en-us/users/sergiofz/credentials/62c37378fe6b23b5">GitHub Actions</a> <span class="muted">(Microsoft)</span></li>
-    <li>Huawei Certified Network Associate, Routing and Switching</li>
-    <li>Certificate in Advanced English, C1</li>
-    <li class="expired"><a href="https://www.credly.com/badges/280dfe0a-7f95-4efd-988c-833a2ce50bb3">CKA, Certified Kubernetes Administrator</a>, 2021, expired</li>
-    <li class="expired"><a href="https://www.credly.com/badges/5b013852-5840-4003-8d88-f57046f0f867">AWS Certified Solutions Architect, Associate</a>, 2020, expired</li>
-    <li class="expired"><a href="https://www.credly.com/badges/95cfef44-d320-4783-bfcd-191e8036edaa">HashiCorp Certified Terraform Associate</a>, 2020, expired</li>
+    <li><a href="https://drive.google.com/file/d/1DDywieez2z3MEFZneKmNWFX29mnscnge/view">Certificate in Advanced English, C1/C2</a> <span class="muted">(Cambridge)</span>, 2020</li>
+    <li class="expired"><a href="https://www.credly.com/badges/280dfe0a-7f95-4efd-988c-833a2ce50bb3">CKA, Certified Kubernetes Administrator</a>, 2021 to 2024, expired</li>
+    <li class="expired"><a href="https://www.credly.com/badges/5b013852-5840-4003-8d88-f57046f0f867">AWS Certified Solutions Architect, Associate</a>, 2020 to 2023, expired</li>
+    <li class="expired"><a href="https://www.credly.com/badges/95cfef44-d320-4783-bfcd-191e8036edaa">HashiCorp Certified Terraform Associate</a>, 2020 to 2022, expired</li>
+    <li class="expired"><a href="https://drive.google.com/file/d/1dW75WIMym5hbxSGHXmK0RmP2Mu4m_RD3/view">Huawei Certified Network Associate, Routing and Switching</a>, 2018 to 2021, expired</li>
   </ul>
 </section>
 
 <section id="skills" aria-labelledby="skills-h">
   <h2 id="skills-h">Skills</h2>
-  <p>Kubernetes (GKE, EKS, AKS, OpenShift, Rancher, K3s), Helmfile, Kustomize, Docker. AWS, GCP, DigitalOcean, on-prem and hybrid networking. Terraform, Terragrunt, Atlantis. ArgoCD, GitHub Actions, GitLab CI, Jenkins, Tekton. Prometheus, Grafana, Loki, Tempo, Datadog. Nginx, Caddy, Istio, Keycloak. Routing, switching, VPNs. PostgreSQL, MySQL, SQLite, MongoDB, Cassandra. Go, Bash, Python, R, TypeScript, Swift.</p>
+  <dl class="skills">
+    <dt>AI</dt>
+    <dd>Agent tooling and MCP servers in Go and TypeScript; Claude Code and Codex workflows and automation; local speech recognition and LLM inference; rules and prompt management for AI IDEs.</dd>
+    <dt>DevOps and platform</dt>
+    <dd>Kubernetes (GKE, EKS, AKS, OpenShift, Rancher, K3s), Helmfile, Kustomize, Docker. AWS, GCP, DigitalOcean, on-prem and hybrid networking. Terraform, Terragrunt, Terraform Enterprise, Atlantis. GitHub Enterprise, GitHub Actions, ArgoCD, GitLab CI, Jenkins, Tekton. Prometheus, Grafana, Loki, Tempo, Datadog. Nginx, Caddy, Istio, Keycloak. Routing, switching, VPNs, TR-069.</dd>
+    <dt>Software</dt>
+    <dd>Go, Python, TypeScript, Bash, R, Swift, C#. REST API design, distributed systems. PostgreSQL, MySQL, SQLite, MongoDB, Cassandra, Redis.</dd>
+  </dl>
 </section>
 
 </main>

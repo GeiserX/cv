@@ -4,38 +4,43 @@ Preview: [a.html](a.html). Open it in a browser, then press Cmd+P to see the CV 
 
 ## The idea
 
-The page is the CV. It is one column of well-set text that reads top to bottom: who I am, what I'm building now, where I've worked, what I've shipped, and what I studied. The printed version is the same page with the "Now" section taken out, so the website and the PDF can't tell different stories.
+The page is the CV. One column of well-set text that reads top to bottom: who I am, what I am doing now, where I have worked, what I have shipped, what I studied. The printed version is the same page with the blog list taken out, so the website and the PDF cannot tell different stories.
 
-## What it drops, and why
+## What changed after the first review (2026-09-29)
 
-- **The blue logo-cloud hero.** It shows tools, not work. The tools are listed in one short Skills paragraph at the bottom.
-- **The vertical timeline graphic.** It spreads eleven jobs over several screens. Here each job takes three lines: dates in the left gutter, role and company, and one line on what I did.
-- **The skills tag cloud.** It had no order and mixed tools I use every day with ones I touched once. The Skills paragraph lists only what I'd claim today, grouped by area.
-- **The contact form.** A mailto link does the same job with no backend and no spam filter.
-- **"Download Resume" pointing at a stale PDF.** The PDF is now generated from this page, as described below.
-- **The 2020 "About me" text in [the current page](../../index.html).** Words like "enthusiastic", "passionate" and "tireless" are gone. What replaces them is the one line I already use to describe what I do.
-- **Bootstrap, jQuery, the gulp build and all JavaScript.** The page is one HTML file with inline CSS, and it loads no web fonts. It uses the system serif stack, which is Charter on macOS and iOS with Cambria and Georgia as fallbacks.
+- The opening line says AI innovator first, then that the DevOps, Kubernetes, networking, distributed systems and software engineering work continues. Open source and the homelab are named as the hobby, without a list of hardware.
+- Now describes the Xebia work with Disney and, in one deliberately vague sentence, the collaboration with San Francisco-based projects on AI agent infrastructure.
+- akou is no longer pinned or featured. Projects are the top ten by GitHub stars, nothing else.
+- Every job that has a blog post or a repository behind it links to it: Claranet to five posts, ACSdesk to the GenieACS container, services and two posts, AP Data Services to AdamPartsFinder, Good Peoples Connected to the PiSpot repos, Electrónica Martínez to three repos and two posts. The BEng entry links the final project post (zero-touch provisioning, honourable mention).
+- Certifications carry years and links for all seven, including the two Drive scans. AWS Solutions Architect Professional shows 2026. The four expired ones show their span and the word expired.
+- Skills are three groups in this order: AI, DevOps and platform, Software.
+- The X handle is in the contact row and in the Twitter card metadata.
+- Date ranges use "to" instead of a dash.
 
-## What it keeps
+## What it drops from the old site, and why
 
-- The name at the top and the "Strong opinions, loosely held" mantra, which moves to the footer.
-- The full work history, with dates taken from the April 2026 CV.
-- Education and certifications. The expired certifications stay on the page but are greyed out and marked expired, so nobody has to guess.
-- Projects. This time they are the top ten by GitHub stars, one line each, with akou pinned first.
+- **The blue logo-cloud hero.** It shows tools, not work.
+- **The vertical timeline graphic.** Eleven jobs over several screens. Here each job takes three lines: dates in the left gutter, role and company, one line of what, with links to the evidence.
+- **The skills tag cloud.** No order, tools touched once next to tools used daily. Replaced by three short groups.
+- **The contact form.** A mailto link does the same job with no third party.
+- **"Download Resume" pointing at a stale PDF.** The PDF is generated from this page, see below.
+- **The 2020 "About me" copy.** "Enthusiastic", "passionate", "tireless" are gone.
+- **Bootstrap, jQuery, the gulp build and all JavaScript.** One HTML file, inline CSS, system serif stack (Charter on macOS and iOS, Cambria and Georgia as fallbacks). No web font.
 
-## Layout details
+## How the page stays current
 
-- The column is about 68 characters wide, set in rem so the smaller nav and footer text keep the same width.
-- Section headings are small uppercase labels with a hairline rule under them. Nothing else on the page has decoration.
-- Light and dark follow `prefers-color-scheme`. There is no toggle, because a toggle needs JavaScript.
-- On phones the date gutter stacks above each entry.
-- The head carries a `<title>`, a meta description, Open Graph profile tags, `rel="me"` for Mastodon verification, and a JSON-LD `Person` block listing the public profiles.
+Two blocks are generated and everything else is hand-written.
+
+- `<!-- posts:start -->` to `<!-- posts:end -->`: the latest five posts from https://geiser.cloud/rss/.
+- `<!-- projects:start -->` to `<!-- projects:end -->`: the top ten repositories by stars from the GitHub API (forks, archived repos, awesome lists and Homebrew taps excluded), with GitHub's own first sentence as the description and the homepage as the Site link. The "Stars as of" date updates with them.
+
+[`scripts/update_content.py`](../../scripts/update_content.py) rewrites both blocks and touches nothing outside the markers. [`.github/workflows/update-content.yml`](../../.github/workflows/update-content.yml) runs it every twelve hours and on demand, and commits only when something changed. It is the same pattern the profile README already uses for its post list and star badges, in one script instead of two actions. `update_content.py index.html --check` exits 1 when the page is behind, so it doubles as a test; on 2026-09-29 a deliberately wrong star count made it fail and a clean run made it pass.
 
 ## How the CV PDF is made
 
-The print stylesheet does all the layout work. It sets A4 pages with 15 mm margins and 9.6 pt text. It hides the section nav, the Now section and the per-project "Site" links, and it prints links as plain black text. The contact row prints as readable addresses because each link's text is the address itself, `github.com/GeiserX` rather than "GitHub". Printed from headless Chromium today, it comes out at exactly two pages.
+The print stylesheet does the layout: A4, 15 mm margins, 9.6 pt text, the section nav and the post list hidden, links printed as plain black text. The contact row prints as readable addresses because each link's text is the address itself.
 
-Cmd+P works, but a hand-made PDF drifts from the site as soon as I forget to redo it. So the plan is a GitHub Action that prints the PDF on every push and ships it with the site:
+A hand-made PDF drifts from the site as soon as it is forgotten, so the plan is a GitHub Action that prints the PDF on every push and ships it with the site:
 
 ```yaml
 name: pages
@@ -50,7 +55,7 @@ jobs:
   build:
     runs-on: ubuntu-latest   # public repo: GitHub-hosted runners are free
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - name: Print the CV from the page itself
         run: |
           sudo apt-get install -y --no-install-recommends poppler-utils
@@ -68,11 +73,10 @@ jobs:
       - uses: actions/deploy-pages@v4
 ```
 
-Chrome is preinstalled on `ubuntu-latest`, and `pdfinfo` comes from `poppler-utils`. The page-count check makes the build fail if an edit pushes the CV onto a third page. The PDF is never committed. It exists only in the deployed site at `/sergio-fernandez-cv.pdf`, so it can't go stale.
-
-Switching over means changing the repo's Pages source from "Deploy from a branch" to "GitHub Actions". Once that is done, a plain "PDF" link can go in the contact row.
+Chrome is preinstalled on `ubuntu-latest`, and `pdfinfo` comes from `poppler-utils`. The page-count check fails the build if an edit pushes the CV onto a third page. The PDF is never committed; it exists only in the deployed site at `/sergio-fernandez-cv.pdf`. Switching over means changing the repo's Pages source from "Deploy from a branch" to "GitHub Actions". Once that is done, a "CV (PDF)" link goes in the contact row, and the blog's About page can point at it instead of the hand-uploaded file.
 
 ## Open choices
 
-- Projects shows akou plus the top ten, so eleven rows. If it should be ten in total, smart-covers drops off.
-- The phone number stays out, as the brief requires. That means this PDF has no phone number, unlike the hand-made one. If recruiters need it, it could be added to the printed version only, but it would still be in the page source, so it would really be public.
+- The phone number stays out, as on the blog. The PDF therefore has no phone number.
+- The X handle is @GeiresX, taken from the GitHub profile's social links.
+- 5G-DIVE is text only because its site answers 403 to automated checks.
