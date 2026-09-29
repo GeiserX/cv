@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en" class="dark-mode">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio mockup: list</title>
+<!--
+  Preview frame only. It approximates the Alto theme on https://geiser.cloud/portfolio/
+  (dark mode, accent #FF1A75, 720px content column, Inter stack) without loading the
+  site's CSS. Everything between ghost-content-start and ghost-content-end is the exact
+  body that would be sent to the Ghost Admin API.
+-->
+<style>
+:root {
+  --ghost-accent-color: #FF1A75;
+  --bg: #282c35;
+  --fg: #ccc;
+  --muted: #999;
+  --border: #495061;
+  --font-sans: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --gap: 3.6rem;
+}
+@media (max-width: 767px) { :root { --gap: 2rem; } }
+*, *::before, *::after { box-sizing: border-box; }
+html { font-size: 62.5%; }
+body {
+  margin: 0; min-height: 100vh;
+  background: var(--bg); color: var(--fg);
+  font-family: var(--font-sans); font-size: 1.6rem; line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+p, h1, h2, h3 { margin: 0; }
+a { color: #fff; text-decoration: none; }
+a:hover { opacity: .8; }
+
+/* Header, as Alto draws it */
+.gh-head { height: 100px; padding: 0 var(--gap); }
+.gh-head-inner { max-width: 1200px; margin: 0 auto; height: 100%; display: flex; align-items: center; justify-content: space-between; }
+.gh-head-logo { font-size: 2.4rem; font-weight: 800; letter-spacing: -.02em; color: #fff; }
+.gh-head-menu { display: flex; gap: 2.8rem; list-style: none; margin: 0; padding: 0; font-size: 1.5rem; }
+.gh-head-menu a { color: var(--muted); }
+.gh-head-menu .nav-current a { color: #fff; }
+
+/* Article, as Alto draws a page */
+.gh-canvas { width: min(720px, 100% - var(--gap) * 2); margin: 0 auto; }
+.article-header { text-align: center; margin-top: 60px; }
+.post-title { font-size: 3.6rem; font-weight: 800; letter-spacing: -.01em; line-height: 1.15; color: #fff; }
+.gh-content { font-size: 1.7rem; margin-top: 4rem; padding-bottom: 12rem; word-break: break-word; }
+.gh-content > * + * { margin-top: 1.6em; }
+.gh-content a { text-decoration: underline; }
+.gh-content ul, .gh-content ol { padding-left: 2.8rem; }
+.gh-content li + li { margin-top: .8rem; }
+@media (max-width: 767px) { .gh-head-menu { display: none; } .article-header { margin-top: 48px; } .post-title { font-size: 3rem; } }
+</style>
+</head>
+<body>
+
+<header class="gh-head">
+  <div class="gh-head-inner">
+    <a class="gh-head-logo" href="https://geiser.cloud">Geiser's Cloud</a>
+    <ul class="gh-head-menu">
+      <li><a href="https://cv.geiser.cloud">CV</a></li>
+      <li><a href="https://geiser.cloud/about/">About</a></li>
+      <li class="nav-current"><a href="https://geiser.cloud/portfolio/">Portfolio</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+<article>
+<header class="article-header gh-canvas">
+  <h1 class="post-title">Portfolio</h1>
+</header>
+<div class="gh-content gh-canvas">
+<!-- ghost-content-start -->
+<!--kg-card-begin: html-->
+<div class="gp-list">
+<style>
+.gp-list { --gp-muted: #999; }
+.gp-list p { margin: 0; }
+.gp-list a { text-decoration-color: var(--ghost-accent-color, #FF1A75); text-decoration-thickness: 1px; text-underline-offset: .2em; }
+.gp-list .gp-rows { list-style: none; margin: 2.4rem 0; padding: 0; }
+.gp-list .gp-rows li { display: grid; grid-template-columns: 1fr auto; column-gap: 2rem; margin: 0; padding: .7rem 0; }
+.gp-list .gp-name { font-weight: 600; text-decoration: none; }
+.gp-list .gp-name:hover { text-decoration: underline; text-decoration-color: var(--ghost-accent-color, #FF1A75); }
+.gp-list .gp-line { display: block; }
+.gp-list .gp-site { font-size: .9em; }
+.gp-list .gp-stars { color: var(--gp-muted); font-size: .88em; padding-top: .15em; text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums lining-nums; }
+.gp-list .gp-note { color: var(--gp-muted); font-size: .9em; }
+.gp-list .gp-note + .gp-note { margin-top: .4em; }
+</style>
+<p>These are the ten of my public repositories with the most stars. The other 190 or so are on GitHub.</p>
+<ul class="gp-rows">
+<li><div><a class="gp-name" href="https://github.com/GeiserX/Telegram-Archive">Telegram-Archive</a> <span class="gp-line">Own your Telegram history: incremental backups with a local viewer that feels like the real app. <a class="gp-site" href="https://geiserx.github.io/Telegram-Archive/">Site</a></span></div> <span class="gp-stars">215 stars</span></li>
+<li><div><a class="gp-name" href="https://github.com/GeiserX/genieacs-container">genieacs-container</a> <span class="gp-line">The original and most used container and Helm chart for GenieACS. <a class="gp-site" href="https://geiser.cloud/how-to-deploy-genieacs/">Guide</a></span></div> <span class="gp-stars">135 stars</span></li>
+<li><div><a class="gp-name" href="https://github.com/GeiserX/VPN-Bypass">VPN-Bypass</a> <span class="gp-line">macOS menu-bar app for per-domain VPN routing, with a CLI.</span></div> <span class="gp-stars">122 stars</span></li>
+<li><div><a class="gp-name" href="https://github.com/GeiserX/whisper-subs">whisper-subs</a> <span class="gp-line">Jellyfin plugin that generates subtitles locally with Whisper. <a class="gp-site" href="https://geiserx.github.io/whisper-subs/">Site</a></span></div> <span class="gp-stars">103 stars</span></li>
+<li><div><a class="gp-name" href="https://github.com/GeiserX/CashPilot">CashPilot</a> <span class="gp-line">Self-hosted passive income platform: deploy once, track earnings. <a class="gp-site" href="https://geiserx.github.io/CashPilot">Site</a></span></div> <span class="gp-stars">53 stars</span></li>
+<li><div><a class="gp-name" href="https://github.com/GeiserX/LynxPrompt">LynxPrompt</a> <span class="gp-line">Self-hosted, federated platform for AI IDE rules and commands (AGENTS.md, CLAUDE.md). <a class="gp-site" href="https://lynxprompt.com">Site</a></span></div> <span class="gp-stars">49 stars</span></li>
+<li><div><a class="gp-name" href="https://github.com/GeiserX/DeclaRenta">DeclaRenta</a> <span class="gp-line">Turns foreign broker reports into Spanish tax filings (Modelo 100, 720, 721, D-6). Free, private, self-hosted. <a class="gp-site" href="https://declarenta.com">Site</a></span></div> <span class="gp-stars">48 stars</span></li>
+<li><div><a class="gp-name" href="https://github.com/GeiserX/Pumperly">Pumperly</a> <span class="gp-line">Open-source fuel and EV route planner with real-time prices. <a class="gp-site" href="https://pumperly.com">Site</a></span></div> <span class="gp-stars">38 stars</span></li>
+<li><div><a class="gp-name" href="https://github.com/GeiserX/Wayback-Archive">Wayback-Archive</a> <span class="gp-line">Download complete websites from the Wayback Machine for offline viewing.</span></div> <span class="gp-stars">38 stars</span></li>
+<li><div><a class="gp-name" href="https://github.com/GeiserX/smart-covers">smart-covers</a> <span class="gp-line">Jellyfin plugin: cover extraction from PDF, EPUB and audiobooks.</span></div> <span class="gp-stars">18 stars</span></li>
+</ul>
+<p class="gp-note">The rest are on <a href="https://github.com/GeiserX">github.com/GeiserX</a>.</p>
+<p class="gp-note">This list refreshes itself every twelve hours from the GitHub API. Stars as of 2026-09-29.</p>
+</div>
+<!--kg-card-end: html-->
+<!-- ghost-content-end -->
+</div>
+</article>
+</main>
+
+</body>
+</html>

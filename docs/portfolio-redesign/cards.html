@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en" class="dark-mode">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio (cards mockup)</title>
+<!-- Preview frame only. It approximates the Alto theme in forced dark mode as served on
+     https://geiser.cloud/portfolio/ (colours, widths and the .gh-content rules that reach
+     into an html card). Nothing between the ghost-content markers depends on this block. -->
+<style>
+:root {
+  --ghost-accent-color: #FF1A75;
+  --bg: #282c35;
+  --text: #ccc;
+  --muted: #999;
+  --gap: 2rem;
+}
+* { box-sizing: border-box; }
+html { font-size: 62.5%; background: var(--bg); }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.gh-head {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  height: 100px;
+  padding: 0 36px;
+}
+.gh-head ul { display: flex; gap: 2.8rem; margin: 0; padding: 0; list-style: none; }
+.gh-head ul a { color: #fff; font-weight: 600; text-decoration: none; }
+.gh-head-logo { color: #fff; font-size: 2.4rem; font-weight: 800; letter-spacing: -.02em; text-decoration: none; }
+.article-header, .gh-content { width: min(720px, 100% - var(--gap) * 2); margin-inline: auto; }
+.article-header { margin-top: 60px; text-align: center; }
+.post-title { margin: 0; color: #fff; font-size: 3.6rem; font-weight: 800; line-height: 1.15; letter-spacing: -.02em; }
+.gh-content { margin-top: 5.6rem; margin-bottom: 12rem; font-size: 1.7rem; word-break: break-word; }
+.gh-content > * { margin-top: 0; margin-bottom: 0; }
+.gh-content > * + * { margin-top: 1.6em; }
+.gh-content h3 { font-size: 1.4em; }
+.gh-content a { color: var(--ghost-accent-color); text-decoration: underline; word-break: break-word; }
+@media (max-width: 767px) {
+  .gh-head { grid-template-columns: 1fr; justify-items: center; gap: 1.2rem; height: auto; padding: 2.4rem 2rem 0; }
+  .gh-head-logo { order: -1; }
+  .post-title { font-size: 3.2rem; }
+  .article-header { margin-top: 40px; }
+  .gh-content { margin-top: 4rem; }
+}
+</style>
+</head>
+<body>
+<header class="gh-head">
+  <nav><ul>
+    <li><a href="https://cv.geiser.cloud">CV</a></li>
+    <li><a href="https://geiser.cloud/about/">About</a></li>
+    <li><a href="https://geiser.cloud/portfolio/">Portfolio</a></li>
+  </ul></nav>
+  <a class="gh-head-logo" href="https://geiser.cloud">Geiser's Cloud</a>
+  <span></span>
+</header>
+<main>
+<article>
+<header class="article-header"><h1 class="post-title">Portfolio</h1></header>
+<div class="gh-content">
+<!-- ghost-content-start -->
+<!--kg-card-begin: html-->
+<style>
+.pf { --pf-muted: #999; --pf-rule: #3a3f4b; --pf-tile: #21252c; }
+.pf .pf-intro { margin: 0; font-size: 1.1em; line-height: 1.6; }
+.pf .pf-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3.2rem 2.4rem; margin: 2.4em 0 0; padding: 0; list-style: none; }
+.pf .pf-card { margin: 0; padding: 0; display: flex; flex-direction: column; }
+.pf .pf-media { display: block; border-radius: 8px; overflow: hidden; aspect-ratio: 9 / 2; text-decoration: none; }
+.pf .pf-media img { display: block; width: 100%; height: 100%; object-fit: cover; margin: 0; border-radius: 0; }
+.pf .pf-tile { display: flex; align-items: center; padding: 0 7%; background: var(--pf-tile); border: 1px solid var(--pf-rule); }
+.pf .pf-tile span { color: #fff; font-size: 1.45em; font-weight: 700; letter-spacing: -.02em; line-height: 1.1; }
+.pf .pf-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1.2rem; margin: 1.2rem 0 0; }
+.pf .pf-name { margin: 0; font-size: 1em; font-weight: 700; line-height: 1.3; letter-spacing: -.01em; }
+.pf .pf-name a { color: #fff; text-decoration: none; }
+.pf .pf-name a:hover, .pf .pf-name a:focus-visible { text-decoration: underline; }
+.pf .pf-stars { flex: none; color: var(--pf-muted); font-size: .85em; font-variant-numeric: tabular-nums lining-nums; white-space: nowrap; }
+.pf .pf-line { margin: .4rem 0 0; font-size: .92em; line-height: 1.55; }
+.pf .pf-line a { white-space: nowrap; }
+.pf .pf-more { margin: 3.2em 0 0; color: var(--pf-muted); font-size: .95em; }
+@media (max-width: 640px) {
+  .pf .pf-grid { grid-template-columns: 1fr; gap: 2.8rem; }
+}
+</style>
+<div class="pf">
+  <p class="pf-intro">I build things nobody asked for, one repo at a time. These are the ten that got the most stars on GitHub, with a line on what each one does.</p>
+  <ul class="pf-grid">
+    <li class="pf-card">
+      <a class="pf-media" href="https://github.com/GeiserX/Telegram-Archive" tabindex="-1" aria-hidden="true"><img src="https://raw.githubusercontent.com/GeiserX/Telegram-Archive/main/docs/images/banner.svg" alt="" width="1200" height="300" loading="lazy"></a>
+      <div class="pf-head"><h3 class="pf-name"><a href="https://github.com/GeiserX/Telegram-Archive">Telegram-Archive</a></h3><span class="pf-stars">215 stars</span></div>
+      <p class="pf-line">Own your Telegram history: incremental backups with a local viewer that feels like the real app. <a href="https://cv.geiser.cloud/Telegram-Archive/">Site</a></p>
+    </li>
+    <li class="pf-card">
+      <a class="pf-media" href="https://github.com/GeiserX/genieacs-container" tabindex="-1" aria-hidden="true"><img src="https://raw.githubusercontent.com/GeiserX/genieacs-container/main/docs/images/banner.svg" alt="" width="900" height="200" loading="lazy"></a>
+      <div class="pf-head"><h3 class="pf-name"><a href="https://github.com/GeiserX/genieacs-container">genieacs-container</a></h3><span class="pf-stars">135 stars</span></div>
+      <p class="pf-line">The original and most used container and Helm chart for GenieACS. <a href="https://geiser.cloud/how-to-deploy-genieacs/">Guide</a></p>
+    </li>
+    <li class="pf-card">
+      <a class="pf-media" href="https://github.com/GeiserX/VPN-Bypass" tabindex="-1" aria-hidden="true"><img src="https://raw.githubusercontent.com/GeiserX/VPN-Bypass/main/docs/images/banner.svg" alt="" width="1200" height="320" loading="lazy"></a>
+      <div class="pf-head"><h3 class="pf-name"><a href="https://github.com/GeiserX/VPN-Bypass">VPN-Bypass</a></h3><span class="pf-stars">122 stars</span></div>
+      <p class="pf-line">macOS menu-bar app for per-domain VPN routing, with a CLI.</p>
+    </li>
+    <li class="pf-card">
+      <a class="pf-media" href="https://github.com/GeiserX/whisper-subs" tabindex="-1" aria-hidden="true"><img src="https://raw.githubusercontent.com/GeiserX/whisper-subs/main/docs/images/banner.svg" alt="" width="900" height="200" loading="lazy"></a>
+      <div class="pf-head"><h3 class="pf-name"><a href="https://github.com/GeiserX/whisper-subs">whisper-subs</a></h3><span class="pf-stars">103 stars</span></div>
+      <p class="pf-line">Jellyfin plugin that generates subtitles locally with Whisper. <a href="https://cv.geiser.cloud/whisper-subs/">Site</a></p>
+    </li>
+    <li class="pf-card">
+      <a class="pf-media pf-tile" href="https://github.com/GeiserX/CashPilot" tabindex="-1" aria-hidden="true"><span>CashPilot</span></a>
+      <div class="pf-head"><h3 class="pf-name"><a href="https://github.com/GeiserX/CashPilot">CashPilot</a></h3><span class="pf-stars">53 stars</span></div>
+      <p class="pf-line">Self-hosted passive income platform: deploy once, track earnings. <a href="https://cv.geiser.cloud/CashPilot/">Site</a></p>
+    </li>
+    <li class="pf-card">
+      <a class="pf-media" href="https://github.com/GeiserX/LynxPrompt" tabindex="-1" aria-hidden="true"><img src="https://raw.githubusercontent.com/GeiserX/LynxPrompt/main/docs/images/banner.svg" alt="" width="900" height="200" loading="lazy"></a>
+      <div class="pf-head"><h3 class="pf-name"><a href="https://github.com/GeiserX/LynxPrompt">LynxPrompt</a></h3><span class="pf-stars">49 stars</span></div>
+      <p class="pf-line">Self-hosted, federated platform for AI IDE rules and commands (AGENTS.md, CLAUDE.md). <a href="https://lynxprompt.com">Site</a></p>
+    </li>
+    <li class="pf-card">
+      <a class="pf-media pf-tile" href="https://github.com/GeiserX/DeclaRenta" tabindex="-1" aria-hidden="true"><span>DeclaRenta</span></a>
+      <div class="pf-head"><h3 class="pf-name"><a href="https://github.com/GeiserX/DeclaRenta">DeclaRenta</a></h3><span class="pf-stars">48 stars</span></div>
+      <p class="pf-line">Turns foreign broker reports into Spanish tax filings (Modelo 100, 720, 721, D-6). Free, private, self-hosted. <a href="https://declarenta.com">Site</a></p>
+    </li>
+    <li class="pf-card">
+      <a class="pf-media" href="https://github.com/GeiserX/Wayback-Archive" tabindex="-1" aria-hidden="true"><img src="https://raw.githubusercontent.com/GeiserX/Wayback-Archive/main/docs/images/banner.svg" alt="" width="900" height="200" loading="lazy"></a>
+      <div class="pf-head"><h3 class="pf-name"><a href="https://github.com/GeiserX/Wayback-Archive">Wayback-Archive</a></h3><span class="pf-stars">38 stars</span></div>
+      <p class="pf-line">Download complete websites from the Wayback Machine for offline viewing.</p>
+    </li>
+    <li class="pf-card">
+      <a class="pf-media" href="https://github.com/GeiserX/Pumperly" tabindex="-1" aria-hidden="true"><img src="https://raw.githubusercontent.com/GeiserX/Pumperly/main/docs/images/banner.svg" alt="" width="900" height="300" loading="lazy"></a>
+      <div class="pf-head"><h3 class="pf-name"><a href="https://github.com/GeiserX/Pumperly">Pumperly</a></h3><span class="pf-stars">38 stars</span></div>
+      <p class="pf-line">Open-source fuel and EV route planner with real-time prices. <a href="https://pumperly.com">Site</a></p>
+    </li>
+    <li class="pf-card">
+      <a class="pf-media" href="https://github.com/GeiserX/smart-covers" tabindex="-1" aria-hidden="true"><img src="https://raw.githubusercontent.com/GeiserX/smart-covers/main/docs/images/banner.svg" alt="" width="900" height="200" loading="lazy"></a>
+      <div class="pf-head"><h3 class="pf-name"><a href="https://github.com/GeiserX/smart-covers">smart-covers</a></h3><span class="pf-stars">18 stars</span></div>
+      <p class="pf-line">Jellyfin plugin: cover extraction from PDF, EPUB and audiobooks.</p>
+    </li>
+  </ul>
+  <p class="pf-more">The rest, about 200 public repositories, are on <a href="https://github.com/GeiserX">github.com/GeiserX</a>.</p>
+</div>
+<!--kg-card-end: html-->
+<!-- ghost-content-end -->
+</div>
+</article>
+</main>
+</body>
+</html>
