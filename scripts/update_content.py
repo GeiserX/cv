@@ -93,8 +93,9 @@ def projects_block(n, keep):
 def plain(text):
     """No emoji, no em or en dashes, straight quotes: the page's own rules apply to fetched text too."""
     text = re.sub(r"[\U0001F300-\U0001FAFF☀-➿]", "", text)
-    text = text.replace("—", ",").replace("–", ",").replace(" - ", ", ")
-    return text.replace("“", '"').replace("”", '"').replace("‘", "'").replace("’", "'").strip()
+    text = re.sub(r"\s*[—–]\s*|\s+-\s+", ", ", text)
+    text = text.replace("“", '"').replace("”", '"').replace("‘", "'").replace("’", "'")
+    return re.sub(r"\s{2,}", " ", text).strip()
 
 
 def one_line(desc):
