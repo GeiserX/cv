@@ -22,14 +22,15 @@ This is the single source of facts for the mockups. Everything here was checked 
   5. Building a GenieACS MCP server in Go so an LLM can manage routers. https://geiser.cloud/putting-ai-hands-on-routers-building-a-genieacs-mcp-server-in-go/
 - A homelab: Unraid servers, Mac minis, Tailscale, Gitea, the blog itself runs there. Keep it to one line.
 
-## Experience (dates from the April 2026 CV)
+## Experience (reconciled with LinkedIn on 2026-09-29; LinkedIn wins where the CV disagreed)
 
 | When | Where | Role | What, in one line |
 |---|---|---|---|
-| Jul 2025 to now | Xebia (consulting), Spain | Senior DevOps Engineer | Consulting for large clients on AWS and GCP: GitHub Enterprise and GitOps migrations, Terraform enablement. Technical interviews for Xebia's contractor hires (not for the client). |
-| Jan 2021 to Jun 2025 | Claranet Deutschland GmbH, Germany | Cloud DevOps Engineer | Kubernetes managed services for German clients. Led the Kubernetes production readiness assessment product, patch and upgrade management, and disaster recovery. GCP and AWS consultant. |
-| Jan 2020 to Dec 2020 | Telcaria Ideas SL, Spain | Edge 5G Network Research Engineer | 5G-DIVE EU/Taiwan research project: a PaaS and MLaaS on fog and edge resources (K3s, Helm, H2O.ai, GitLab CI, ArgoCD). |
-| Aug 2019 to Dec 2020 | Culture of Insight, UK | DevOps Consultant | Took an R analytics app for Twitch to production with Docker on DigitalOcean. |
+| Jul 2025 to now | Xebia (consulting), Spain | Senior DevOps Engineer II | Consulting for large clients on AWS and GCP: GitHub Enterprise and GitOps migrations, Terraform enablement. Technical interviews for Xebia's contractor hires (not for the client). |
+| Jul 2023 to Jun 2025 | ACSdesk, freelance (overlaps Claranet) | AI and DevOps Consultant | Kubeshark on OpenShift; TrustYou: Sentry to GlitchTip, Hetzner, Loki forensics, KRR rightsizing (these three blog posts are from here, not Claranet); founded LynxPrompt; AI adoption consulting for Spanish companies. |
+| Jan 2021 to Jun 2025 | Claranet Deutschland GmbH, Germany | Senior DevSecOps Engineer | Kubernetes managed services for German clients. Led the Kubernetes production readiness assessment product, patch and upgrade management, and disaster recovery. GCP and AWS consultant. |
+| Jan 2020 to Dec 2020 | Telcaria Ideas SL, Spain | MLOps Engineer | 5G-DIVE EU/Taiwan research project: a PaaS and MLaaS on fog and edge resources (K3s, Helm, H2O.ai, GitLab CI, ArgoCD). |
+| Feb 2019 to Jan 2020 (LinkedIn; the CV says Aug 2019 to Dec 2020) | Culture of Insight, UK, freelance | DevOps Consultant | Took an R analytics app for Twitch to production with Docker on DigitalOcean. |
 | May 2016 to Dec 2019 | ACSdesk (his own company), Spain | Founder, GenieACS Engineer | Deployed and operated GenieACS, zero-touch CPE provisioning, for ISPs in Spain, Switzerland, Chile and India. |
 | Feb 2019 to Dec 2019 | AP Data Services Ltd, UK | Software and Cloud DevOps Engineer | R Shiny products for UK financial services and car-part resellers, ShinyProxy, AWS. |
 | May 2018 to Jul 2019 | Good Peoples Connected, France | Technical Partner | Designed an IoT Wi-Fi voucher device on Raspberry Pi for hotels in Guadeloupe: Python, Ansible/AWX, Vault, FreeCAD enclosures. Post: https://geiser.cloud/building-the-pispot-watch-an-iot-adventure/ |
@@ -45,13 +46,14 @@ This is the single source of facts for the mockups. Everything here was checked 
 
 ## Certifications (Credly checked 2026-09-28)
 
-- AWS Certified Solutions Architect, Professional. https://www.credly.com/badges/816320ad-ed15-41a1-98f7-f4d134ff9a44/public_url
-- GitHub Actions (Microsoft). https://learn.microsoft.com/en-us/users/sergiofz/credentials/62c37378fe6b23b5
+- AWS Certified Solutions Architect, Professional, Feb 2026 to Feb 2029. https://www.credly.com/badges/816320ad-ed15-41a1-98f7-f4d134ff9a44/public_url
+- GitHub Actions (Microsoft), Nov 2025 to Nov 2027. https://learn.microsoft.com/en-us/users/sergiofz/credentials/62c37378fe6b23b5
 - CKA, Certified Kubernetes Administrator, 2021, expired. https://www.credly.com/badges/280dfe0a-7f95-4efd-988c-833a2ce50bb3
 - AWS Certified Solutions Architect, Associate, 2020, expired. https://www.credly.com/badges/5b013852-5840-4003-8d88-f57046f0f867
 - HashiCorp Certified Terraform Associate, 2020, expired. https://www.credly.com/badges/95cfef44-d320-4783-bfcd-191e8036edaa
 - Huawei Certified Network Associate, Routing and Switching.
-- Certificate in Advanced English, C1.
+- Certificate in Advanced English, C1 (Cambridge, Aug 2020, credential B2679429).
+- Languages (LinkedIn): Spanish native, English bilingual, Bulgarian full professional, German, French and Italian basic. LinkedIn headline: Staff AI DevOps Engineer. BEng grade 8.4/10.
 
 ## Projects (GitHub stars on 2026-09-29, non-fork, non-archived, awesome lists excluded)
 
