@@ -1,0 +1,28 @@
+# Rewrites https://geiser.cloud/portfolio/ from the GitHub API: top repositories by stars, banners checked,
+# one-liners from portfolio/config.yml. Runs on a free GitHub-hosted runner through the public Admin API;
+# the WAF in front of the blog lets Ghost-authenticated admin calls through (Coraza rule 104/105 on geiserback).
+name: Update portfolio page
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: portfolio
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: GeiserX/ghost-github-portfolio@v0.4.0
+        with:
+          config-path: portfolio/config.yml
+          ghost-admin-api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
+        env:
+          GHOST_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

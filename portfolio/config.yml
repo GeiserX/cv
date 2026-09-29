@@ -1,0 +1,56 @@
+# Portfolio page of geiser.cloud, written by .github/workflows/portfolio.yml with GeiserX/ghost-github-portfolio.
+# The Ghost Admin key comes from the GHOST_ADMIN_API_KEY repository secret, never from this file.
+github:
+  username: GeiserX
+
+ghost:
+  url: https://geiser.cloud
+  pageSlug: portfolio
+
+portfolio:
+  maxRepos: 21
+  columns: 3
+  excludeAwesomeLists: true
+  excludeRepos:
+    - .github
+  repos:
+    Telegram-Archive:
+      description: "Own your Telegram history: incremental backups with a local viewer that feels like the real app."
+    genieacs-container:
+      description: "The original and most used container and Helm chart for GenieACS."
+    VPN-Bypass:
+      description: "macOS menu-bar app for per-domain VPN routing, with a CLI."
+    whisper-subs:
+      description: "Jellyfin plugin that generates subtitles locally with Whisper."
+    CashPilot:
+      description: "Self-hosted passive income platform: deploy once, track earnings."
+    LynxPrompt:
+      description: "Self-hosted, federated platform for AI IDE rules and commands (AGENTS.md, CLAUDE.md)."
+    DeclaRenta:
+      description: "Turns foreign broker reports into Spanish tax filings (Modelo 100, 720, 721, D-6). Free, private, self-hosted."
+    Wayback-Archive:
+      description: "Download complete websites from the Wayback Machine for offline viewing."
+    Pumperly:
+      description: "Open-source fuel and EV route planner with real-time prices."
+    smart-covers:
+      description: "Jellyfin plugin: cover extraction from PDF, EPUB and audiobooks."
+    genieacs-mcp:
+      description: "MCP server for GenieACS."
+    Personal-Genome-Pipeline:
+      description: "Whole-genome analysis pipeline for consumer hardware, fully local."
+    telegram-slskd-local-bot:
+      description: "Music discovery and download through a Telegram bot: Spotify metadata, FLAC from Soulseek, library organised."
+    quality-gate:
+      description: "Jellyfin plugin that restricts users to specific media versions by path-based policies."
+    paperless-telegram-bot:
+      description: "Manage Paperless-ngx documents from Telegram: upload, search, tag and organise."
+    quality-gate-encoder:
+      description: "Quality Gate's encoder for Jellyfin: 720p HEVC, H.264 or AV1 versions of a library with NVIDIA and Intel acceleration."
+    genieacs-services:
+      description: "systemd and Supervisord service files for GenieACS processes."
+    web-mirror:
+      description: "Mirror any web page to a local server for offline access."
+    duplicacy-exporter:
+      description: "Prometheus exporter for Duplicacy backups: live speed, progress and completion metrics."
+    CashPilot-android:
+      description: "Android companion for CashPilot: monitors passive income apps on the phone without root."
