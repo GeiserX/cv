@@ -1,5 +1,12 @@
 # Keeps the two generated blocks of the page current, the same way the profile README refreshes its
 # post list and star badges: a scheduled job rewrites the blocks and commits only when something changed.
+#
+# Why a deploy key: the "Protect main" ruleset requires a pull request, so a push made with GITHUB_TOKEN
+# is rejected (GH013). On a user-owned repo the GitHub Actions app cannot be a ruleset bypass actor, so
+# the push goes over ssh with the write deploy key "update-content workflow (bypasses Protect main)",
+# whose private half is the secret UPDATE_CONTENT_DEPLOY_KEY. The ruleset lists DeployKey as a bypass
+# actor; every other direct push to main is still blocked. A push made with a deploy key starts
+# workflow runs, so pages.yml deploys from its own push trigger and needs no dispatch here.
 name: Update posts and stars
 
 on:
@@ -8,14 +15,16 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
-  actions: write   # to start pages.yml: pushes made with GITHUB_TOKEN start no workflow runs by themselves
+  contents: read
 
 jobs:
   update:
     runs-on: ubuntu-latest   # public repo: GitHub-hosted runners are free
     steps:
       - uses: actions/checkout@v7
+        with:
+          ssh-key: ${{ secrets.UPDATE_CONTENT_DEPLOY_KEY }}
+          persist-credentials: true
 
       - uses: actions/setup-python@v7
         with:
@@ -26,9 +35,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 scripts/update_content.py index.html
 
-      - name: Commit if anything changed, then deploy
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit if anything changed
         run: |
           git config user.name "GeiserX"
           git config user.email "9169332+GeiserX@users.noreply.github.com"
@@ -36,4 +43,3 @@ jobs:
           git diff --cached --quiet && echo "nothing to commit" && exit 0
           git commit -m "chore: refresh latest posts and project stars"
           git push
-          gh workflow run pages.yml --ref main
