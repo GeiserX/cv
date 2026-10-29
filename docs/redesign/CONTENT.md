@@ -64,7 +64,7 @@ This is the single source of facts for the mockups. Everything here was checked 
 | 122 | VPN-Bypass | Swift | macOS menu-bar app for per-domain VPN routing, with a CLI. | |
 | 103 | whisper-subs | C# | Jellyfin plugin that generates subtitles locally with Whisper. | https://geiserx.github.io/whisper-subs/ |
 | 53 | CashPilot | Python | Self-hosted passive income platform: deploy once, track earnings. | https://geiserx.github.io/CashPilot |
-| 49 | LynxPrompt | TypeScript | Self-hosted, federated platform for AI IDE rules and commands (AGENTS.md, CLAUDE.md). | https://lynxprompt.com |
+| 49 | LynxPrompt | TypeScript | Self-hosted, federated platform for AI IDE rules and commands (AGENTS.md, CLAUDE.md). | https://lynxprompt.geiser.cloud |
 | 48 | DeclaRenta | TypeScript | Turns foreign broker reports into Spanish tax filings (Modelo 100, 720, 721, D-6). Free, private, self-hosted. | https://declarenta.com |
 | 38 | Wayback-Archive | Python | Download complete websites from the Wayback Machine for offline viewing. | |
 | 38 | Pumperly | TypeScript | Open-source fuel and EV route planner with real-time prices. | https://pumperly.com |
