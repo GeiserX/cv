@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: GeiserX/ghost-github-portfolio@v0.4.0
+      - uses: GeiserX/ghost-github-portfolio@v0.4.1
         with:
           config-path: portfolio/config.yml
           ghost-admin-api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
